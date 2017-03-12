@@ -1,0 +1,26 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+*.txt
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+classes
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+src/main/java/Stormcloud/chakatcore
+

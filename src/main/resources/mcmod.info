@@ -1,0 +1,28 @@
+[
+{
+  "modid": "chakatcore",
+  "name": "ChakatCore",
+  "description": "A Core mod that is used by all of Chakat StormCloud's mods",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["StormCloud"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+},
+  "modid": "madengineering",
+  "name": "Mad Engineering",
+  "description": "A research and testing based tech mod, that might make you a bit of a mad man in the process (insert manical laughter)",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["StormCloud"],
+  "credits": "Reika, for being just annoying enough to inspire me to do it myself",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+]
