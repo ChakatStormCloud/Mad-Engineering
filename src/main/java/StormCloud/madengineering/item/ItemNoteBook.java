@@ -11,7 +11,9 @@ import net.minecraft.world.World;
 public class ItemNoteBook extends Item {
 
 
-	public ItemNoteBook() {
+	public ItemNoteBook(String unlocalizedName,String registryName) {
+		this.setUnlocalizedName(unlocalizedName);
+		this.setRegistryName(registryName);
 		this.maxStackSize = 0;
 		this.setMaxDamage(0);
 		this.setUnlocalizedName("ItemNoteBook");
