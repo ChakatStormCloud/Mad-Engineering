@@ -18,6 +18,7 @@ public class ItemNoteBook extends Item {
 	}
 	
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public ActionResult<ItemStack> onRightItemClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand){
 		
 		return new ActionResult(EnumActionResult.PASS,itemStackIn);

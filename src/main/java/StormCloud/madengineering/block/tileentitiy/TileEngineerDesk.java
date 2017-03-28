@@ -12,19 +12,16 @@ import StormCloud.madengineering.item.ItemNoteBook;
 public class TileEngineerDesk extends TileEntity implements IInventory, IInteractionObject{
 	
 	private ItemStack[] deskItemStacks = new ItemStack[1];
+	private String deskCustomName;
 	
-	
-	
-	
+	//TODO ALL OF THIS
 	
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.hasCustomName() ? this.deskCustomName : "container.engineerdesk";
 	}
 
 	public boolean hasCustomName() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.deskCustomName != null && !this.deskCustomName.isEmpty();
 	}
 
 	public int getSizeInventory() {
@@ -35,41 +32,6 @@ public class TileEngineerDesk extends TileEntity implements IInventory, IInterac
 		return this.deskItemStacks[index];
 	}
 
-	public ItemStack decrStackSize(int index, int count) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public ItemStack removeStackFromSlot(int index) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void setInventorySlotContents(int index, ItemStack stack) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public int getInventoryStackLimit() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public boolean isUseableByPlayer(EntityPlayer player) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	public void openInventory(EntityPlayer player) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void closeInventory(EntityPlayer player) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
 		if(index == 0 && stack.getItem() == new ItemNoteBook()) {
 			return true;
@@ -77,34 +39,5 @@ public class TileEngineerDesk extends TileEntity implements IInventory, IInterac
 		return false;
 	}
 
-	public int getField(int id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public void setField(int id, int value) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public int getFieldCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public void clear() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getGuiID() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
