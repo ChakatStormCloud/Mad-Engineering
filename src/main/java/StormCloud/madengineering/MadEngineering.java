@@ -1,5 +1,7 @@
 package StormCloud.madengineering;
 
+import StormCloud.madengineering.block.BlocksHandler;
+import StormCloud.madengineering.item.ItemsHandler;
 import StormCloud.madengineering.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -32,6 +34,11 @@ public class MadEngineering {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
 		Utility.getLogger().info("PreInit - Mad Engineering...");
+		
+		ItemsHandler.init();
+		BlocksHandler.init();
+		ItemsHandler.register();
+		BlocksHandler.register();
 		
 		proxy.registerRenders();
 	}

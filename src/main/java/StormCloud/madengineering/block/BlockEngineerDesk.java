@@ -1,5 +1,7 @@
 package StormCloud.madengineering.block;
 
+import java.util.Random;
+
 import javax.annotation.Nullable;
 
 import StormCloud.madengineering.MadEngineering;
@@ -12,10 +14,12 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 //import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IInteractionObject;
@@ -27,21 +31,25 @@ import net.minecraft.world.World;
  */
 public class BlockEngineerDesk extends Block{
 	
-	public static final String Name = "engineerdesk";
 	
-	// TODO implement facing
-	// TODO implement model/render/crap I don't even know yet
-	// TODO implement meta blocks for different parts of the multiblock workspace
 	
 	/**
 	 * @author StormCloud
 	 * Constructor
 	 * 
 	 */
-	public BlockEngineerDesk() {
+	public BlockEngineerDesk(String unlocalizedName, String registryName) {
 		super(Material.WOOD);
+		this.setUnlocalizedName(unlocalizedName);
+		this.setRegistryName(new ResourceLocation(MadEngineering.MODID, registryName));
+		this.setHardness(2f);
+		this.setResistance(2f);
 		
-		
+	}
+	
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+		return Item.getItemFromBlock(this);
 	}
 	
 	
@@ -58,47 +66,6 @@ public class BlockEngineerDesk extends Block{
             return true;
         }
     }
-	/****** TODO implement tile entity and inventory storing
-	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileEngineerDesk();
-	}
-	******/
 	
-	/**
-	 * @author StormCloud
-	 *
-	 */
-	public static class InterfaceEngineerDesk1 implements IInteractionObject{
-		
-		
-		/*==============Constructor=============*/
-		public InterfaceEngineerDesk1(){
-			// TODO blank construtor
-		}
-		
-		//==============IInteractionObject interface Methods=================
-		public String getName() {
-			return null;
-		}
-		public boolean hasCustomName() {
-			return false;
-		}
-		public ITextComponent getDisplayName() {
-			return null;
-		}
-		public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
-			
-			return null;
-		}
-		
-		/**
-		 *I don't really know what this is used for.... 
-		 */
-		public String getGuiID() {
-			//TODO, find out if this is good enough
-			return (MadEngineering.MODID + ":" + Name);
-		}
-		
-	}
 	
 }

@@ -9,14 +9,14 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
 public class ItemNoteBook extends Item {
+	
 
 
 	public ItemNoteBook(String unlocalizedName,String registryName) {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(registryName);
-		this.maxStackSize = 0;
+		this.maxStackSize = 1;
 		this.setMaxDamage(0);
-		this.setUnlocalizedName("ItemNoteBook");
 	}
 	
 	

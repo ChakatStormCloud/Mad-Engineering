@@ -7,9 +7,10 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IInteractionObject;
+import StormCloud.madengineering.item.ItemsHandler;
 import StormCloud.madengineering.item.ItemNoteBook;
 
-public class TileEngineerDesk extends TileEntity implements IInventory, IInteractionObject{
+public class TileEngineerDesk extends TileEntity/* implements IInventory, IInteractionObject*/{
 	
 	private ItemStack[] deskItemStacks = new ItemStack[1];
 	private String deskCustomName;
@@ -33,7 +34,7 @@ public class TileEngineerDesk extends TileEntity implements IInventory, IInterac
 	}
 
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-		if(index == 0 && stack.getItem() == new ItemNoteBook()) {
+		if(index == 0 && stack.getItem() == ItemsHandler.itemNoteBook) {
 			return true;
 		}
 		return false;
