@@ -1,3 +1,9 @@
 item.itemNoteBook.name=Engineer's Note Book
 
+item.itemUpgradeablePickaxe.name=Upgradeable Pickaxe
+item.itemUpgradeableShovel.name=Upgradeable Shovel
+item.itemUpgradeableHoe.name=Upgradeable Hoe
+item.itemUpgradeableAxe.name=Upgradeable Shovel
+item.itemUpgradeableSword.name=Upgradeable Sword
+
 tile.blockEngineerDesk.name=Engineer's Desk

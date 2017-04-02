@@ -20,7 +20,7 @@ public class ItemsHandler {
 	
 	public static Item itemNoteBook;
 	
-	public static final ToolMaterial upgradeable = EnumHelper.addToolMaterial(MadEngineering.MODID + ".upgradeable", 2, 400, 5F, 3F, 9);
+	public static final ToolMaterial upgradeable = EnumHelper.addToolMaterial(MadEngineering.MODID + ".upgradeable", 2, 400, 4F, 3F, 9);
 	
 	public static ItemPickaxe itemUpgradeablePickaxe;
 	public static ItemAxe itemUpgradeableAxe;
@@ -33,7 +33,7 @@ public class ItemsHandler {
 		
 		
 		itemUpgradeablePickaxe = new ItemUpgradeablePickaxe(upgradeable,"itemUpgradeablePickaxe");
-		itemUpgradeableAxe = new ItemUpgradeableAxe(upgradeable,"itemUpgradeableAxe");
+		//itemUpgradeableAxe = new ItemUpgradeableAxe(upgradeable,"itemUpgradeableAxe");
 		itemUpgradeableHoe = new ItemUpgradeableHoe(upgradeable,"itemUpgradeableHoe");
 		itemUpgradeableShovel = new ItemUpgradeableShovel(upgradeable,"itemUpgradeableShovel");
 		itemUpgradeableSword = new ItemUpgradeableSword(upgradeable,"itemUpgradeableSword");
@@ -45,7 +45,7 @@ public class ItemsHandler {
 		registerItem(itemNoteBook);
 		
 		registerItem(itemUpgradeablePickaxe);
-		registerItem(itemUpgradeableAxe);
+		//registerItem(itemUpgradeableAxe);
 		registerItem(itemUpgradeableHoe);
 		registerItem(itemUpgradeableShovel);
 		registerItem(itemUpgradeableSword);
@@ -55,7 +55,7 @@ public class ItemsHandler {
 		registerRender(itemNoteBook);
 		
 		registerRender(itemUpgradeablePickaxe);
-		registerRender(itemUpgradeableAxe);
+		//registerRender(itemUpgradeableAxe);
 		registerRender(itemUpgradeableHoe);
 		registerRender(itemUpgradeableShovel);
 		registerRender(itemUpgradeableSword);
