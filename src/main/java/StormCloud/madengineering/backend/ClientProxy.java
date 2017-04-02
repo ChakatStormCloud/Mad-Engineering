@@ -1,4 +1,4 @@
-package StormCloud.madengineering.proxy;
+package StormCloud.madengineering.backend;
 
 import StormCloud.madengineering.block.BlocksHandler;
 import StormCloud.madengineering.item.ItemsHandler;

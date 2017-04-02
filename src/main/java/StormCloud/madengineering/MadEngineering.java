@@ -1,8 +1,9 @@
 package StormCloud.madengineering;
 
+import StormCloud.madengineering.backend.CommonProxy;
+import StormCloud.madengineering.backend.handlers.RecipeHandler;
 import StormCloud.madengineering.block.BlocksHandler;
 import StormCloud.madengineering.item.ItemsHandler;
-import StormCloud.madengineering.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -20,9 +21,9 @@ public class MadEngineering {
 	public static final String MODNAME = "Mad Engineering";
 	public static final String MODVERSION = "0.1.1";
 	public static final String MCVERSION = "1.10.2";
-	public static final String CLIENTPROXY = "StormCloud.madengineering.proxy.ClientProxy";
-	public static final String COMMONPROXY = "StormCloud.madengineering.proxy.CommonProxy";
-	public static final String SERVERPROXY = "StormCloud.madengineering.proxy.ServerProxy";
+	public static final String CLIENTPROXY = "StormCloud.madengineering.backend.ClientProxy";
+	public static final String COMMONPROXY = "StormCloud.madengineering.backend.CommonProxy";
+	public static final String SERVERPROXY = "StormCloud.madengineering.backend.ServerProxy";
 	
 	
 	@Mod.Instance(MODID)
@@ -46,6 +47,10 @@ public class MadEngineering {
 	@EventHandler
 	public void init(FMLInitializationEvent event){
 		Utility.getLogger().info("Init - Mad Engineering...");
+		
+		RecipeHandler.registerCraftingRecipies();
+		RecipeHandler.registerSmeltingRecipies();
+		
 	}
 	
 	@EventHandler

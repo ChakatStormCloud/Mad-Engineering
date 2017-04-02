@@ -1,4 +1,4 @@
-package StormCloud.madengineering.proxy;
+package StormCloud.madengineering.backend;
 
 public class CommonProxy {
 	
