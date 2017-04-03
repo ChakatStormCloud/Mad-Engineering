@@ -1,6 +1,7 @@
 package StormCloud.madengineering;
 
 import StormCloud.madengineering.backend.CommonProxy;
+import StormCloud.madengineering.backend.handlers.CreativeTabHandler;
 import StormCloud.madengineering.backend.handlers.RecipeHandler;
 import StormCloud.madengineering.block.BlocksHandler;
 import StormCloud.madengineering.item.ItemsHandler;
@@ -26,6 +27,7 @@ public class MadEngineering {
 	public static final String SERVERPROXY = "StormCloud.madengineering.backend.ServerProxy";
 	
 	
+	
 	@Mod.Instance(MODID)
 	public static MadEngineering instance;
 	
@@ -40,6 +42,8 @@ public class MadEngineering {
 		BlocksHandler.init();
 		ItemsHandler.register();
 		BlocksHandler.register();
+		CreativeTabHandler.init();
+		CreativeTabHandler.assignCreativeTabs();
 		
 		proxy.registerRenders();
 	}

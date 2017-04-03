@@ -18,7 +18,8 @@ public class RecipeHandler {
 	
 	
 	public static void registerSmeltingRecipies(){
-		
+		//Input can be block, item, or itemstack, Output must be itemstack, XP is a float
+		//GameRegistry.addSmelting(input, output, xp);
 		
 		Utility.getLogger().info("No Smelting Recipies to Register :(");
 	}
