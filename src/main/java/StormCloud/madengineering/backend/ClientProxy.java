@@ -10,4 +10,5 @@ public class ClientProxy extends CommonProxy {
 		ItemsHandler.registerRenders();
 		BlocksHandler.registerRenders();
 	}
+	
 }

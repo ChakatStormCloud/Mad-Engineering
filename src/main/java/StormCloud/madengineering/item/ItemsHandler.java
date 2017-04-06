@@ -1,8 +1,13 @@
 package StormCloud.madengineering.item;
 
 
+import java.util.ArrayList;
+
+
 import StormCloud.madengineering.MadEngineering;
 import StormCloud.madengineering.Utility;
+import StormCloud.madengineering.backend.handlers.Enumnums.*;
+import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -19,6 +24,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ItemsHandler {
 	
 	public static Item itemNoteBook;
+	public static Item itemComponent;
 	
 	public static final ToolMaterial upgradeable = EnumHelper.addToolMaterial(MadEngineering.MODID + ".upgradeable", 2, 400, 4F, 3F, 9);
 	
@@ -30,6 +36,7 @@ public class ItemsHandler {
 	
 	public static void init(){
 		itemNoteBook = new ItemNoteBook("itemNoteBook","itemNoteBook");
+		itemComponent = new ItemComponent("itemComponent");
 		
 		
 		itemUpgradeablePickaxe = new ItemUpgradeablePickaxe(upgradeable,"itemUpgradeablePickaxe");
@@ -43,6 +50,7 @@ public class ItemsHandler {
 	
 	public static void register(){
 		registerItem(itemNoteBook);
+		registerItem(itemComponent);
 		
 		registerItem(itemUpgradeablePickaxe);
 		//registerItem(itemUpgradeableAxe);
@@ -53,6 +61,8 @@ public class ItemsHandler {
 	
 	public static void registerRenders(){
 		registerRender(itemNoteBook);
+		registerRenderMeta(itemComponent,ComponentTypes.values());
+		
 		
 		registerRender(itemUpgradeablePickaxe);
 		//registerRender(itemUpgradeableAxe);
@@ -65,12 +75,25 @@ public class ItemsHandler {
 		GameRegistry.register(item);
 		Utility.getLogger().info("Registered item: " + item.getUnlocalizedName().substring(5));
 	}
-	/*
-	 *please work 
-	 */
+
 	public static void registerRender(Item item){
 		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(MadEngineering.MODID, item.getUnlocalizedName().substring(5)), "inventory"));
 		Utility.getLogger().info("Registered render for item: " + item.getUnlocalizedName().substring(5));
+	}
+	
+	public static void registerRenderMeta(Item item,IMetaEnum[] enums){
+		ArrayList<ResourceLocation> list = new ArrayList<ResourceLocation>();
+		
+		for(IMetaEnum e:enums){
+			
+			ModelLoader.setCustomModelResourceLocation(item, (e).getMeta(), new ModelResourceLocation(new ResourceLocation(MadEngineering.MODID, item.getUnlocalizedName().substring(5) + "." + e.toString()), "inventory"));
+			Utility.getLogger().info("Registered render for item: " + item.getUnlocalizedName().substring(5) + "." + e.toString());
+			
+			list.add(new ResourceLocation(MadEngineering.MODID,e.toString()));
+		}
+		// Thanks to irc.furnet.org/#CodingFurs for help with this little mess
+		ModelBakery.registerItemVariants(item,list.toArray(new ResourceLocation[list.size()]));
+		
 	}
 
 }

@@ -1,7 +1,6 @@
 {
 	"variants": {
-		"normal": {
-			"model": "madengineering:blockEngineerDesk"
-		}
+		"type=desk": {"model": "madengineering:blockEngineerDesk_desk"},
+		"type=workspace":{"model": "madengineering:blockEngineerDesk_workspace"}
 	}	
 }

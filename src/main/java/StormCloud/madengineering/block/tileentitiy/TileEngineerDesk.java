@@ -1,14 +1,8 @@
 package StormCloud.madengineering.block.tileentitiy;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.IInteractionObject;
 import StormCloud.madengineering.item.ItemsHandler;
-import StormCloud.madengineering.item.ItemNoteBook;
 
 public class TileEngineerDesk extends TileEntity/* implements IInventory, IInteractionObject*/{
 	

@@ -6,6 +6,7 @@ item.itemUpgradeableHoe.name=Upgradeable Hoe
 item.itemUpgradeableAxe.name=Upgradeable Shovel
 item.itemUpgradeableSword.name=Upgradeable Sword
 
-tile.blockEngineerDesk.name=Engineer's Desk
+tile.blockEngineerDesk.DESK.name=Engineer's Desk
+tile.blockEngineerDesk.WORKSPACE.name=Engineer's Desk
 
 itemGroup.madengineering=Mad Engineering

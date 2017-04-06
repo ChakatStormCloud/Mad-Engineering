@@ -2,7 +2,7 @@
 	"parent": "block/cube_bottom_top",
 	"textures": {
 		"side": "madengineering:blocks/blockEngineerDesk_Side",
-		"top": "madengineering:blocks/blockEngineerDesk_Top",
+		"top": "madengineering:blocks/blockEngineerDesk_workspace_Top",
 		"bottom": "madengineering:blocks/blockEngineerDesk_Bottom"
 	}
 }

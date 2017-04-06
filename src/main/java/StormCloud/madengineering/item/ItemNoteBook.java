@@ -16,11 +16,9 @@ public class ItemNoteBook extends Item {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(registryName);
 		this.maxStackSize = 1;
-		this.setMaxDamage(0);
 	}
 	
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public ActionResult<ItemStack> onRightItemClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand){
 		
 		return new ActionResult(EnumActionResult.PASS,itemStackIn);
