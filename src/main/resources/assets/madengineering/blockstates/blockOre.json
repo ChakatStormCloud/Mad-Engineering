@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"type=copper": {"model": "madengineering:blockOre_copper"},
+		"type=nickel": {"model": "madengineering:blockOre_nickel"},
+		"type=chrome": {"model": "madengineering:blockOre_chrome"},
+		"type=tungsten": {"model": "madengineering:blockOre_tungsten"}
+	}
+}

@@ -49,8 +49,30 @@ public class Enumnums {
 		public int getMeta(){
 			return ID;
 		}
+	}
+	
+	public static enum OreTypes implements IStringSerializable, IMetaEnum{
+		COPPER("copper",0),
+		NICKEL("nickel",1),
+		CHROME("chrome",2),
+		TUNGSTEN("tungsten",3);
+		
+		private int ID;
+		private String name;
+		
+		private OreTypes(String s, int a){
+			this.name = s;
+			this.ID = a;
+		}
 		
 		
+		public int getMeta() {
+			return ID;
+		}
+
+		public String getName() {
+			return name;
+		}
 		
 	}
 }

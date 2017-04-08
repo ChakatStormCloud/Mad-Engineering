@@ -6,6 +6,7 @@ import StormCloud.madengineering.MadEngineering;
 import StormCloud.madengineering.Utility;
 import StormCloud.madengineering.backend.handlers.Enumnums.EngineerDeskTypes;
 import StormCloud.madengineering.backend.handlers.Enumnums.IMetaEnum;
+import StormCloud.madengineering.backend.handlers.Enumnums.OreTypes;
 import StormCloud.madengineering.block.itemblock.ItemBlockMetaBlock;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelBakery;
@@ -19,17 +20,21 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class BlocksHandler {
 	
 	public static Block blockEngineerDesk;
+	public static Block blockOre;
 	
 	
 	public static void init(){
 		blockEngineerDesk = new BlockEngineerDesk("blockEngineerDesk","blockEngineerDesk");
+		blockOre = new BlockOre("blockOre");
 	}
 	
 	public static void register(){
 		registerBlock(blockEngineerDesk, new ItemBlockMetaBlock(blockEngineerDesk));
+		registerBlock(blockOre, new ItemBlockMetaBlock(blockOre));
 	}
 	public static void registerRenders(){
 		registerRenderMeta(blockEngineerDesk, EngineerDeskTypes.values());
+		registerRenderMeta(blockOre, OreTypes.values());
 	}
 	
 	//===========Block Registers=====

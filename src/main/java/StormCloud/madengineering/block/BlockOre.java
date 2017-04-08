@@ -2,9 +2,8 @@ package StormCloud.madengineering.block;
 
 import java.util.List;
 
-
 import StormCloud.madengineering.MadEngineering;
-import StormCloud.madengineering.backend.handlers.Enumnums.EngineerDeskTypes;
+import StormCloud.madengineering.backend.handlers.Enumnums.OreTypes;
 import StormCloud.madengineering.block.itemblock.IMetaBlockName;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -21,28 +20,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
+public class BlockOre extends Block implements IMetaBlockName{
+	
+	public static final PropertyEnum TYPE = PropertyEnum.create("type", OreTypes.class);
 
-/**
- * @author StormCloud
- *
- */
-public class BlockEngineerDesk extends Block implements IMetaBlockName{
-	
-	public static final PropertyEnum TYPE =  PropertyEnum.create("type", EngineerDeskTypes.class);
-	
-	
-	public BlockEngineerDesk(String unlocalizedName, String registryName) {
-		super(Material.WOOD);
+	public BlockOre(String unlocalizedName){
+		super(Material.ROCK);
 		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(MadEngineering.MODID, registryName));
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EngineerDeskTypes.DESK));
+		this.setRegistryName(new ResourceLocation(MadEngineering.MODID, unlocalizedName));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, OreTypes.COPPER));
 	}
-	/*
-	@Override
-	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return Item.getItemFromBlock(this);
-	}
-	*/
+	
 	
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
@@ -64,19 +52,19 @@ public class BlockEngineerDesk extends Block implements IMetaBlockName{
 	
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		EngineerDeskTypes type = (EngineerDeskTypes)state.getValue(TYPE);
+		OreTypes type = (OreTypes)state.getValue(TYPE);
 		
 		return type.getMeta();
 	}
 	
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(TYPE, EngineerDeskTypes.values()[meta]);
+		return this.getDefaultState().withProperty(TYPE, OreTypes.values()[meta]);
 	}
 	
 	@Override
 	public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
-		for(int i = 0; i < EngineerDeskTypes.values().length; i++){
+		for(int i = 0; i < OreTypes.values().length; i++){
 			list.add(new ItemStack(itemIn, 1, i));
 		}
 	}
@@ -84,7 +72,6 @@ public class BlockEngineerDesk extends Block implements IMetaBlockName{
 	//=============Interface IMetaBlockName=============//
 	
 	public String getMetaName(ItemStack stack) {
-		return EngineerDeskTypes.values()[stack.getItemDamage()].getName();
+		return OreTypes.values()[stack.getItemDamage()].getName();
 	}
-	
 }
