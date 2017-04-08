@@ -23,7 +23,7 @@ public class CreativeTabHandler {
 		ItemsHandler.itemComponent.setCreativeTab(tabMadEngineer);
 		
 		BlocksHandler.blockEngineerDesk.setCreativeTab(tabMadEngineer);
-		
+		BlocksHandler.blockOre.setCreativeTab(tabMadEngineer);
 	}
 	
 }
