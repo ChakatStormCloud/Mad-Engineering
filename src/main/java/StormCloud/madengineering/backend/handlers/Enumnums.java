@@ -31,19 +31,21 @@ public class Enumnums {
 	}
 	
 	public static enum ComponentTypes implements IStringSerializable, IMetaEnum{
-		IRON_SHEET(0),
-		IRON_GEAR(1), //these are just placeholder for now.
-		IRON_WIRE(2),
-		BROKEN(3);
+		IRON_SHEET("iron_sheet",0),
+		IRON_GEAR("iron_gear",1), //these are just placeholder for now.
+		IRON_WIRE("iron_wire",2),
+		BROKEN("broken",3);
 		
 		private int ID;
+		private String name;
 		
-		private ComponentTypes(int ID){
-			this.ID = ID;
+		private ComponentTypes(String s,int a){
+			this.name = s;
+			this.ID = a;
 		}
 		
 		public String getName() {
-			return toString();
+			return name;
 		}
 		
 		public int getMeta(){
@@ -74,5 +76,30 @@ public class Enumnums {
 			return name;
 		}
 		
+	}
+	
+	public static enum IngotTypes implements IStringSerializable, IMetaEnum{
+		COPPER("copper",0),
+		NICKEL("nickel",1),
+		CHROME("chrome",2),
+		TUNGSTEN("tungsten",3),
+		MOLYBDENUM("molybdenum",4),
+		COBALT("colbalt",5);
+		
+		private String name;
+		private int ID;
+
+		private IngotTypes(String s, int a) {
+			this.name = s;
+			this.ID = a;
+		}
+		
+		public int getMeta() {
+			return ID;
+		}
+
+		public String getName() {
+			return name;
+		}
 	}
 }

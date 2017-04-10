@@ -1,6 +1,8 @@
 package StormCloud.madengineering.backend.handlers;
 
 import StormCloud.madengineering.Utility;
+import StormCloud.madengineering.backend.handlers.Enumnums.IngotTypes;
+import StormCloud.madengineering.backend.handlers.Enumnums.OreTypes;
 import StormCloud.madengineering.block.BlocksHandler;
 import StormCloud.madengineering.item.ItemsHandler;
 import net.minecraft.init.Blocks;
@@ -15,15 +17,19 @@ public class RecipeHandler {
 		GameRegistry.addShapedRecipe(new ItemStack(BlocksHandler.blockEngineerDesk, 1, 1), new Object[]{"PPP","ICI","I I", 'P', Blocks.PLANKS, 'I', Items.IRON_INGOT, 'C', Blocks.CRAFTING_TABLE});
 		GameRegistry.addShapedRecipe(new ItemStack(ItemsHandler.itemNoteBook, 1, 0), new Object[]{" P ","PQP"," P ",'P',Items.PAPER,'Q',Items.WRITABLE_BOOK});
 		
-		Utility.getLogger().info("Registered Crafting Recipies! :)");
+		Utility.getLogger().info("Registered Crafting Recipies!");
 	}
 	
 	
 	public static void registerSmeltingRecipies(){
 		//Input can be block, item, or itemstack, Output must be itemstack, XP is a float
 		//GameRegistry.addSmelting(input, output, xp);
+		GameRegistry.addSmelting(new ItemStack(BlocksHandler.blockOre, 1, OreTypes.COPPER.getMeta()), new ItemStack(ItemsHandler.itemIngot,1,IngotTypes.COPPER.getMeta()), 0.7f);
+		GameRegistry.addSmelting(new ItemStack(BlocksHandler.blockOre, 1, OreTypes.NICKEL.getMeta()), new ItemStack(ItemsHandler.itemIngot,1,IngotTypes.NICKEL.getMeta()), 0.8f);
+		GameRegistry.addSmelting(new ItemStack(BlocksHandler.blockOre, 1, OreTypes.CHROME.getMeta()), new ItemStack(ItemsHandler.itemIngot,1,IngotTypes.CHROME.getMeta()), 0.9f);
+		GameRegistry.addSmelting(new ItemStack(BlocksHandler.blockOre, 1, OreTypes.TUNGSTEN.getMeta()), new ItemStack(ItemsHandler.itemIngot,1,IngotTypes.TUNGSTEN.getMeta()), 1.0f);
 		
-		Utility.getLogger().info("No Smelting Recipies to Register :(");
+		Utility.getLogger().info("Registered Smelting Recipies!");
 	}
 	
 	

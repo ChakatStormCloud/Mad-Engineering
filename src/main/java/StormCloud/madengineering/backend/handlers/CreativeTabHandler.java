@@ -21,6 +21,7 @@ public class CreativeTabHandler {
 		ItemsHandler.itemUpgradeableShovel.setCreativeTab(tabMadEngineer);
 		ItemsHandler.itemUpgradeableSword.setCreativeTab(tabMadEngineer);
 		ItemsHandler.itemComponent.setCreativeTab(tabMadEngineer);
+		ItemsHandler.itemIngot.setCreativeTab(tabMadEngineer);
 		
 		BlocksHandler.blockEngineerDesk.setCreativeTab(tabMadEngineer);
 		BlocksHandler.blockOre.setCreativeTab(tabMadEngineer);

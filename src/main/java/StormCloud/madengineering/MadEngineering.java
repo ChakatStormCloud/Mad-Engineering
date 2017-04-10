@@ -46,11 +46,14 @@ public class MadEngineering {
 		CreativeTabHandler.assignCreativeTabs();
 		
 		proxy.registerRenders();
+		proxy.registerTileEntities();
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event){
 		Utility.getLogger().info("Init - Mad Engineering...");
+		
+		proxy.init();
 		
 		RecipeHandler.registerCraftingRecipies();
 		RecipeHandler.registerSmeltingRecipies();
@@ -61,8 +64,6 @@ public class MadEngineering {
 	public void postInit(FMLPostInitializationEvent event){
 		Utility.getLogger().info("PostInit - Mad Engineering...");
 		
-		Utility.getLogger().info(BlocksHandler.blockEngineerDesk.getUnlocalizedName());
-		Utility.getLogger().info(BlocksHandler.blockEngineerDesk.getRegistryName());
 		
 		
 	}

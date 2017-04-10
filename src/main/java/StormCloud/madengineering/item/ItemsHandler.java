@@ -25,6 +25,7 @@ public class ItemsHandler {
 	
 	public static Item itemNoteBook;
 	public static Item itemComponent;
+	public static Item itemIngot;
 	
 	public static final ToolMaterial upgradeable = EnumHelper.addToolMaterial(MadEngineering.MODID + ".upgradeable", 2, 400, 4F, 3F, 9);
 	
@@ -37,7 +38,7 @@ public class ItemsHandler {
 	public static void init(){
 		itemNoteBook = new ItemNoteBook("itemNoteBook","itemNoteBook");
 		itemComponent = new ItemComponent("itemComponent");
-		
+		itemIngot = new ItemIngot("itemIngot");
 		
 		itemUpgradeablePickaxe = new ItemUpgradeablePickaxe(upgradeable,"itemUpgradeablePickaxe");
 		//itemUpgradeableAxe = new ItemUpgradeableAxe(upgradeable,"itemUpgradeableAxe");
@@ -51,6 +52,7 @@ public class ItemsHandler {
 	public static void register(){
 		registerItem(itemNoteBook);
 		registerItem(itemComponent);
+		registerItem(itemIngot);
 		
 		registerItem(itemUpgradeablePickaxe);
 		//registerItem(itemUpgradeableAxe);
@@ -62,6 +64,7 @@ public class ItemsHandler {
 	public static void registerRenders(){
 		registerRender(itemNoteBook);
 		registerRenderMeta(itemComponent,ComponentTypes.values());
+		registerRenderMeta(itemIngot,IngotTypes.values());
 		
 		
 		registerRender(itemUpgradeablePickaxe);
@@ -86,7 +89,7 @@ public class ItemsHandler {
 		
 		for(IMetaEnum e:enums){
 			
-			ModelLoader.setCustomModelResourceLocation(item, (e).getMeta(), new ModelResourceLocation(new ResourceLocation(MadEngineering.MODID, item.getUnlocalizedName().substring(5) + "." + e.toString()), "inventory"));
+			ModelLoader.setCustomModelResourceLocation(item, (e).getMeta(), new ModelResourceLocation(new ResourceLocation(MadEngineering.MODID, item.getUnlocalizedName().substring(5) + "_" + e.toString()), "inventory"));
 			Utility.getLogger().info("Registered render for item: " + item.getUnlocalizedName().substring(5) + "." + e.toString());
 			
 			list.add(new ResourceLocation(MadEngineering.MODID,e.toString()));
