@@ -25,5 +25,4 @@ public class ItemBlockMetaBlock extends ItemBlock{
 		return damage;
 	}
 	
-	
 }
