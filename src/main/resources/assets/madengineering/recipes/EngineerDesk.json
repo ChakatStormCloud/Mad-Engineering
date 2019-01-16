@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "PPP",
+        "IPI",
+        "I I"
+    ],
+    
+    "key":
+    {
+        "P":
+        {
+            "item": "minecraft:planks"
+        },
+        "I":
+        {
+            "item": "minecraft:iron_ingot"
+        }
+    },
+    
+    "result":
+    {
+        "item": "madengineering:blockEngineerDesk",
+        "count": 1,
+        "data": 0
+    }
+,}

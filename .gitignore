@@ -5,14 +5,14 @@ bin
 .metadata
 .classpath
 .project
-*.txt
+
 # idea
 out
 *.ipr
 *.iws
 *.iml
 .idea
-classes
+
 
 # gradle
 build
@@ -22,5 +22,7 @@ build
 eclipse
 run
 
-src/main/java/Stormcloud/chakatcore
+src/main/java/com/chakatstormcloud/chakatcore
 
+src/main/java/nc/
+src/main/resources/assets/nuclearcraft/
