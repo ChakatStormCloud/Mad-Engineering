@@ -1,8 +1,10 @@
 package com.chakatstormcloud.madengineering.backend.handlers;
 
+import com.chakatstormcloud.madengineering.MadEngineering;
 import com.chakatstormcloud.madengineering.Utility;
+import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IMetaEnum;
 import com.chakatstormcloud.madengineering.block.MadEngBlocks;
-import com.chakatstormcloud.madengineering.item.IHasModel;
+import com.chakatstormcloud.madengineering.item.IMetaItem;
 import com.chakatstormcloud.madengineering.item.MadEngItems;
 
 import net.minecraft.block.Block;
@@ -19,6 +21,8 @@ public class RegistryHandler {
 	
 	@SubscribeEvent
 	public static void onItemRegister(RegistryEvent.Register<Item> event) {
+		
+		
 		
 		IForgeRegistry<Item> registry = event.getRegistry();
 		
@@ -45,15 +49,14 @@ public class RegistryHandler {
 	public static void onModelRegister(ModelRegistryEvent event) {
 		
 		for(Item item: MadEngItems.Items) {
-			if(item instanceof IHasModel) {
-				((IHasModel)item).registerModel();
-			}
+			if(item instanceof IMetaItem) {
+				for(IMetaEnum meta:(IMetaEnum[])((IMetaItem)item).getMetaEnums()) {
+					MadEngineering.proxy.registerItemRenderer(item, meta.getMeta(),MadEngineering.MODID+":"+ item.getUnlocalizedName()+"_"+meta.getName(), "inventory");
+				}
+			}else
+			MadEngineering.proxy.registerItemRenderer(item, 0,MadEngineering.MODID+":"+ item.getUnlocalizedName(), "inventory");
 		}
-		for(Block block: MadEngBlocks.Blocks) {
-			if(block instanceof IHasModel) {
-				((IHasModel)block).registerModel();
-			}
-		}
+		
 	}
 	
 	

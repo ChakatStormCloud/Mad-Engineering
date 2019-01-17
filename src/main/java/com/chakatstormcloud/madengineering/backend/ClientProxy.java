@@ -15,17 +15,19 @@ public class ClientProxy extends CommonProxy {
 	
 	@Override
 	public void init() {
+		super.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(MadEngineering.instance, new GuiHandler());
 	}
 	
 	
 	@Override
-	public void registerRenders(){
+	public void registerRender(){
+		
 	}
 	
 	@Override
-	public void registerItemRenderer(Item item, int meta, String id) {
-		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
+	public void registerItemRenderer(Item item, int meta, String location, String id) {
+		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(location, id));
 	}
 	
 }

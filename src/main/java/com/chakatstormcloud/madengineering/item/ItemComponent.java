@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 
-public class ItemComponent extends Item {
+public class ItemComponent extends Item implements IMetaItem {
 	
 	public ItemComponent(String unlocalizedName) {
 		this.setUnlocalizedName(unlocalizedName);
@@ -34,6 +34,24 @@ public class ItemComponent extends Item {
 		}else{
 			return this.getUnlocalizedName() + "." + ComponentTypes.BROKEN.getName();
 		}
+	}
+
+
+	@Override
+	public Enum[] getMetaEnums() {
+		
+		return ComponentTypes.values();
+	}
+
+
+	@Override
+	public int[] getMetaValues() {
+		Enum[] nums = getMetaEnums();
+		int[] vals = new int[nums.length];
+		for(int i = 0;i<nums.length;i++) {
+			vals[i]=nums[i].ordinal();
+		}
+		return vals;
 	}
 
 

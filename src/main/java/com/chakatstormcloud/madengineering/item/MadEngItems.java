@@ -16,47 +16,36 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class MadEngItems {
 	
-	public static final Item itemNoteBook;
-	public static final Item itemComponent;
-	public static final Item itemIngot;
+	public static Item itemNoteBook;
+	public static Item itemComponent;
+	public static Item itemIngot;
 	
-	public static final ToolMaterial upgradeable = EnumHelper.addToolMaterial(MadEngineering.MODID + ".upgradeable", 2, 400, 4F, 3F, 9);
+	public static ToolMaterial upgradeable = EnumHelper.addToolMaterial(MadEngineering.MODID + ".upgradeable", 2, 400, 4F, 3F, 9);
 	
-	public static final ItemPickaxe itemUpgradeablePickaxe;
-	public static final ItemAxe itemUpgradeableAxe;
-	public static final ItemHoe itemUpgradeableHoe;
-	public static final ItemSpade itemUpgradeableShovel;
-	public static final ItemSword itemUpgradeableSword;
+	public static ItemPickaxe itemUpgradeablePickaxe;
+	public static ItemAxe itemUpgradeableAxe;
+	public static ItemHoe itemUpgradeableHoe;
+	public static ItemSpade itemUpgradeableShovel;
+	public static ItemSword itemUpgradeableSword;
 	
 	
 	public static final List<Item> Items = new ArrayList<Item>();
 	
 	
-	static {
-		itemNoteBook = new ItemNoteBook("itemNoteBook","itemNoteBook");
-		itemComponent = new ItemComponent("itemComponent");
-		itemIngot = new ItemIngot("itemIngot");
-		
-		itemUpgradeablePickaxe = new ItemUpgradeablePickaxe(upgradeable,"itemUpgradeablePickaxe");
-		itemUpgradeableAxe = new ItemUpgradeableAxe(upgradeable,"itemUpgradeableAxe");
-		itemUpgradeableHoe = new ItemUpgradeableHoe(upgradeable,"itemUpgradeableHoe");
-		itemUpgradeableShovel = new ItemUpgradeableShovel(upgradeable,"itemUpgradeableShovel");
-		itemUpgradeableSword = new ItemUpgradeableSword(upgradeable,"itemUpgradeableSword");
-	}
 	
 	
 	public static void init(){
 		
+		Items.add(itemNoteBook = new ItemNoteBook("itemNoteBook","itemNoteBook"));
+		Items.add(itemComponent = new ItemComponent("itemComponent"));
+		Items.add(itemIngot = new ItemIngot("itemIngot"));
 		
-		Items.add(itemNoteBook);
-		Items.add(itemComponent);
-		Items.add(itemIngot);
+		Items.add(itemUpgradeablePickaxe = new ItemUpgradeablePickaxe(upgradeable,"itemUpgradeablePickaxe"));
+		Items.add(itemUpgradeableAxe = new ItemUpgradeableAxe(upgradeable,"itemUpgradeableAxe"));
+		Items.add(itemUpgradeableHoe = new ItemUpgradeableHoe(upgradeable,"itemUpgradeableHoe"));
+		Items.add(itemUpgradeableShovel = new ItemUpgradeableShovel(upgradeable,"itemUpgradeableShovel"));
+		Items.add(itemUpgradeableSword = new ItemUpgradeableSword(upgradeable,"itemUpgradeableSword"));
 		
-		Items.add(itemUpgradeablePickaxe);
-		Items.add(itemUpgradeableAxe);
-		Items.add(itemUpgradeableHoe);
-		Items.add(itemUpgradeableShovel);
-		Items.add(itemUpgradeableSword);
 		
 	}
 	

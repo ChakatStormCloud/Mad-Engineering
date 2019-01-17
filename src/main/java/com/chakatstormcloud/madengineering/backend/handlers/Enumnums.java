@@ -6,10 +6,15 @@ public class Enumnums {
 	//Forgive me, I had to X3
 	public interface IMetaEnum{
 		public int getMeta();
+		
 		public String getName();
+		
+		public static int[] getshit() {
+			return null;
+		}
 	}
 	
-	public static enum EngineerDeskTypes  implements IStringSerializable, IMetaEnum{
+	public static enum EngineerDeskTypes implements IStringSerializable, IMetaEnum{
 		DESK(0,"desk"),
 		WORKSPACE(1,"workspace");
 		
@@ -28,7 +33,13 @@ public class Enumnums {
 		public String getName(){
 			return name;
 		}
+		
+		public static int[] getshit() {
+			return null;
+
+		}
 	}
+	
 	
 	public static enum ComponentTypes implements IStringSerializable, IMetaEnum{
 		IRON_SHEET("iron_sheet",0),

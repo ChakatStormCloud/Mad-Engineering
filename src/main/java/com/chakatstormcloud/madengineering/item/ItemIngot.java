@@ -5,13 +5,14 @@ import java.util.List;
 import com.chakatstormcloud.madengineering.MadEngineering;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IngotTypes;
 
+import nc.enumm.MetaEnums.IngotType;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 
-public class ItemIngot extends Item{
+public class ItemIngot extends Item implements IMetaItem{
 	
 	public ItemIngot(String unlocalizedName){
 		this.setUnlocalizedName(unlocalizedName);
@@ -34,6 +35,21 @@ public class ItemIngot extends Item{
 		}else{
 			return this.getUnlocalizedName() + "." + IngotTypes.COPPER.getName();
 		}
+	}
+
+	@Override
+	public Enum[] getMetaEnums() {
+		return IngotType.values();
+	}
+
+	@Override
+	public int[] getMetaValues() {
+		Enum[] en = IngotType.values();
+		int[] is = new int[en.length];
+		for(int i = 0; i< en.length;i++) {
+			is[i]=en[i].ordinal();
+		}
+		return is;
 	}
 	
 }

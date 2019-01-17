@@ -12,20 +12,31 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
 	
+	public void preinit() {
+		
+	}
+	
+	
 	public void init(){
 		
 	}
 	
-	public void registerRenders(){
+	public void postinit() {
+		
+	}
+	
+	
+	public void registerRender(){
 		
 	}
 
 	public void registerTileEntities() {
 		//GameRegistry.registerTileEntity(TileEngineerDesk.class, MadEngineering.MODID + ":" + BlocksHandler.blockEngineerDesk.getUnlocalizedName().substring(5));
 		
+	}
+
+	public void registerItemRenderer(Item item, int meta, String location, String id) {
 		
 	}
-	
-	public void registerItemRenderer(Item item, int meta, String id) {}
 	
 }

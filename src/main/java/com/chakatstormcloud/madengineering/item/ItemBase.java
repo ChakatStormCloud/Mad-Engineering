@@ -4,25 +4,18 @@ import com.chakatstormcloud.madengineering.MadEngineering;
 
 import net.minecraft.item.Item;
 
-public class ItemBase extends Item implements IHasModel{
+public class ItemBase extends Item{
 	
 	
 	public ItemBase(String name){
 		setUnlocalizedName(name);
-		setRegistryName(name);
-		
-		//TODO setCreativeTab(tab);
+		setRegistryName(MadEngineering.MODID,name);
 		
 		MadEngItems.Items.add(this);
 		
 	}
 	
 	
-	@Override
-	public void registerModel() {
-		MadEngineering.proxy.registerItemRenderer(this, 0, "inventory");
-		
-	}
 	
 	
 }

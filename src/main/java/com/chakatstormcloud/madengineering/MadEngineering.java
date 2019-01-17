@@ -31,7 +31,6 @@ public class MadEngineering {
 	public static final String SERVERPROXY = "com.chakatstormcloud.madengineering.backend.ServerProxy";
 	
 	
-	
 	@Instance
 	public static MadEngineering instance;
 	
@@ -42,13 +41,13 @@ public class MadEngineering {
 	public void preInit(FMLPreInitializationEvent event){
 		Utility.getLogger().info("PreInit - Mad Engineering...");
 		
+		proxy.preinit();
+		
 		MadEngItems.init();
 		MadEngBlocks.init();
 		CreativeTabHandler.init();
 		CreativeTabHandler.assignCreativeTabs();
 		
-		proxy.registerRenders();
-		proxy.registerTileEntities();
 	}
 	
 	@EventHandler
@@ -66,6 +65,7 @@ public class MadEngineering {
 	public void postInit(FMLPostInitializationEvent event){
 		Utility.getLogger().info("PostInit - Mad Engineering...");
 		
+		proxy.postinit();
 		
 		
 	}

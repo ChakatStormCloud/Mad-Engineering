@@ -7,7 +7,7 @@ import com.chakatstormcloud.madengineering.Utility;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.EngineerDeskTypes;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IMetaEnum;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.OreTypes;
-import com.chakatstormcloud.madengineering.block.itemblock.ItemBlockMetaBlock;
+import com.chakatstormcloud.madengineering.block.itemblock.ItemBlockMeta;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelBakery;

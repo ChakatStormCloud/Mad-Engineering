@@ -3,9 +3,11 @@ package com.chakatstormcloud.madengineering.block;
 import java.util.List;
 
 import com.chakatstormcloud.madengineering.MadEngineering;
+import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IMetaEnum;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.OreTypes;
-import com.chakatstormcloud.madengineering.block.itemblock.IMetaBlockName;
+import com.chakatstormcloud.madengineering.block.itemblock.IMetaBlock;
 
+import nc.enumm.MetaEnums.OreType;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -22,7 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class BlockOre extends Block implements IMetaBlockName{
+public class BlockOre extends Block implements IMetaBlock{
 	
 	public static final PropertyEnum TYPE = PropertyEnum.create("type", OreTypes.class);
 
@@ -69,11 +71,22 @@ public class BlockOre extends Block implements IMetaBlockName{
 		for(int i = 0; i < OreTypes.values().length; i++){
 			list.add(new ItemStack(this, 1, i));
 		}
+		OreTypes.values();
 	}
 	
-	//=============Interface IMetaBlockName=============//
+	//=============Interface IMetaBlock=============//
 	
 	public String getMetaName(ItemStack stack) {
 		return OreTypes.values()[stack.getItemDamage()].getName();
 	}
+
+
+	public Class<? extends Enum> getMetaEnum() {
+		return OreTypes.class;
+	}
+
+	
+	
+	
+	
 }

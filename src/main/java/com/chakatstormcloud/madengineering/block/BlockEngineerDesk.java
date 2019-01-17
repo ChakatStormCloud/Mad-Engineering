@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.chakatstormcloud.madengineering.MadEngineering;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.EngineerDeskTypes;
-import com.chakatstormcloud.madengineering.block.itemblock.IMetaBlockName;
+import com.chakatstormcloud.madengineering.block.itemblock.IMetaBlock;
 import com.chakatstormcloud.madengineering.block.tileentity.TileEngineerDesk;
 import com.chakatstormcloud.madengineering.gui.GuiHandler;
 
@@ -36,7 +36,7 @@ import net.minecraftforge.items.IItemHandler;
  * @author StormCloud
  *
  */
-public class BlockEngineerDesk extends Block implements IMetaBlockName, ITileEntityProvider{
+public class BlockEngineerDesk extends Block implements IMetaBlock, ITileEntityProvider{
 	
 	public static final PropertyEnum TYPE =  PropertyEnum.create("type", EngineerDeskTypes.class);
 	
@@ -118,6 +118,11 @@ public class BlockEngineerDesk extends Block implements IMetaBlockName, ITileEnt
 	
 	public String getMetaName(ItemStack stack) {
 		return EngineerDeskTypes.values()[stack.getItemDamage()].getName();
+	}
+
+	@Override
+	public Class<? extends Enum> getMetaEnum() {
+		return EngineerDeskTypes.class;
 	}
 	
 }

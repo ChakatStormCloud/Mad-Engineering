@@ -22,7 +22,9 @@ build
 eclipse
 run
 
+
 src/main/java/com/chakatstormcloud/chakatcore
+
 
 src/main/java/nc/
 src/main/resources/assets/nuclearcraft/
