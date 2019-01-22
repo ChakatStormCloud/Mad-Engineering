@@ -1,9 +1,7 @@
 package com.chakatstormcloud.madengineering.backend;
 
 import com.chakatstormcloud.madengineering.MadEngineering;
-import com.chakatstormcloud.madengineering.block.BlocksHandler;
 import com.chakatstormcloud.madengineering.gui.GuiHandler;
-import com.chakatstormcloud.madengineering.item.ItemsHandler;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;

@@ -1,6 +1,5 @@
 package com.chakatstormcloud.madengineering.block.tileentity;
 
-import com.chakatstormcloud.madengineering.item.ItemsHandler;
 import com.chakatstormcloud.madengineering.item.MadEngItems;
 
 import net.minecraft.entity.player.EntityPlayer;

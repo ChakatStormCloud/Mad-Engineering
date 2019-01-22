@@ -1,5 +1,7 @@
 package com.chakatstormcloud.madengineering.item;
 
+import com.chakatstormcloud.madengineering.MadEngineering;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -12,9 +14,9 @@ public class ItemNoteBook extends Item {
 	
 	
 	
-	public ItemNoteBook(String unlocalizedName,String registryName) {
+	public ItemNoteBook(String unlocalizedName) {
 		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(registryName);
+		this.setRegistryName(MadEngineering.MODID,unlocalizedName);
 		this.maxStackSize = 1;
 	}
 	

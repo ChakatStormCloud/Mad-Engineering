@@ -9,9 +9,11 @@ item.itemUpgradeableSword.name=Upgradeable Sword
 tile.blockEngineerDesk.desk.name=Engineer's Desk
 tile.blockEngineerDesk.workspace.name=Engineer's WorkBench
 
-tile.blockOre.copper.name=Copper Ore
-tile.blockOre.nickel.name=Nickel Ore
-tile.blockOre.chrome.name=Chromium Ore
-tile.blockOre.tungsten.name=Tungsten Ore
+tile.blockOre_copper.name=Copper Ore
+tile.blockOre_nickel.name=Nickel Ore
+tile.blockOre_chrome.name=Chromium Ore
+tile.blockOre_tungsten.name=Tungsten Ore
+
+tile.blockFrame.name=Frame
 
 itemGroup.madengineering=Mad Engineering

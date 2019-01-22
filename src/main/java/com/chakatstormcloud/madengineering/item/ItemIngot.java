@@ -5,7 +5,6 @@ import java.util.List;
 import com.chakatstormcloud.madengineering.MadEngineering;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IngotTypes;
 
-import nc.enumm.MetaEnums.IngotType;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -16,7 +15,7 @@ public class ItemIngot extends Item implements IMetaItem{
 	
 	public ItemIngot(String unlocalizedName){
 		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(MadEngineering.MODID, unlocalizedName));
+		this.setRegistryName(MadEngineering.MODID, unlocalizedName);
 		this.setHasSubtypes(true);
 		
 	}
@@ -39,12 +38,12 @@ public class ItemIngot extends Item implements IMetaItem{
 
 	@Override
 	public Enum[] getMetaEnums() {
-		return IngotType.values();
+		return IngotTypes.values();
 	}
 
 	@Override
 	public int[] getMetaValues() {
-		Enum[] en = IngotType.values();
+		Enum[] en = IngotTypes.values();
 		int[] is = new int[en.length];
 		for(int i = 0; i< en.length;i++) {
 			is[i]=en[i].ordinal();

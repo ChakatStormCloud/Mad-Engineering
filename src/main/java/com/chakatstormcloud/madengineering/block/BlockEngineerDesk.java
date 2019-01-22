@@ -41,10 +41,10 @@ public class BlockEngineerDesk extends Block implements IMetaBlock, ITileEntityP
 	public static final PropertyEnum TYPE =  PropertyEnum.create("type", EngineerDeskTypes.class);
 	
 	
-	public BlockEngineerDesk(String unlocalizedName, String registryName) {
+	public BlockEngineerDesk(String unlocalizedName) {
 		super(Material.WOOD);
 		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(MadEngineering.MODID, registryName));
+		this.setRegistryName(MadEngineering.MODID, unlocalizedName);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EngineerDeskTypes.DESK));
 	}
 	

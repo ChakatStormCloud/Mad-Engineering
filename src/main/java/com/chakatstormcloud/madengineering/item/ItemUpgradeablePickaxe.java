@@ -11,7 +11,7 @@ public class ItemUpgradeablePickaxe extends ItemPickaxe{
 	protected ItemUpgradeablePickaxe(ToolMaterial material, String unlocalizedName){
 		super(material);
 		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(MadEngineering.MODID, unlocalizedName));
+		this.setRegistryName(MadEngineering.MODID, unlocalizedName);
 		
 	}
 }

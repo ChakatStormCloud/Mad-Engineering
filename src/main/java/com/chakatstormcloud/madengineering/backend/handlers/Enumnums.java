@@ -42,7 +42,7 @@ public class Enumnums {
 	
 	
 	public static enum ComponentTypes implements IStringSerializable, IMetaEnum{
-		IRON_SHEET("iron_sheet",0),
+		IRON_SHEET("angle_iron",0),
 		IRON_GEAR("iron_gear",1), //these are just placeholder for now.
 		IRON_WIRE("iron_wire",2),
 		BROKEN("broken",3);

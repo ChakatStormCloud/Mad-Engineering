@@ -12,7 +12,8 @@
     {
         "P":
         {
-            "item": "minecraft:planks"
+            "item": "minecraft:planks",
+            "data": 32767
         },
         "I":
         {

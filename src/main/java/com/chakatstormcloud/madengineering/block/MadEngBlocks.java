@@ -21,13 +21,13 @@ public class MadEngBlocks {
 
 	public static void init() {
 		
-		Blocks.add(blockEngineerDesk = new BlockEngineerDesk("blockEngineerDesk","blockEngineerDesk"));
+		Blocks.add(blockEngineerDesk = new BlockEngineerDesk("blockEngineerDesk"));
 		Blocks.add(blockOre = new BlockOre("blockOre"));
 		Blocks.add(blockFrame = new BlockFrame("blockFrame"));
 		
 		for(Block block:Blocks) {
 			if (block instanceof IMetaBlock) {
-				MadEngItems.Items.add(new ItemBlockMeta(block));
+				MadEngItems.Items.add(new ItemBlockMeta(block).setRegistryName(block.getRegistryName()));
 				
 			}else {	
 				MadEngItems.Items.add(new ItemBlock(block).setRegistryName(block.getRegistryName()));

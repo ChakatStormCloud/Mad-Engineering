@@ -36,12 +36,12 @@ public class MadEngItems {
 	
 	public static void init(){
 		
-		Items.add(itemNoteBook = new ItemNoteBook("itemNoteBook","itemNoteBook"));
+		Items.add(itemNoteBook = new ItemNoteBook("itemNoteBook"));
 		Items.add(itemComponent = new ItemComponent("itemComponent"));
 		Items.add(itemIngot = new ItemIngot("itemIngot"));
 		
 		Items.add(itemUpgradeablePickaxe = new ItemUpgradeablePickaxe(upgradeable,"itemUpgradeablePickaxe"));
-		Items.add(itemUpgradeableAxe = new ItemUpgradeableAxe(upgradeable,"itemUpgradeableAxe"));
+		//Items.add(itemUpgradeableAxe = new ItemUpgradeableAxe(upgradeable,"itemUpgradeableAxe"));
 		Items.add(itemUpgradeableHoe = new ItemUpgradeableHoe(upgradeable,"itemUpgradeableHoe"));
 		Items.add(itemUpgradeableShovel = new ItemUpgradeableShovel(upgradeable,"itemUpgradeableShovel"));
 		Items.add(itemUpgradeableSword = new ItemUpgradeableSword(upgradeable,"itemUpgradeableSword"));

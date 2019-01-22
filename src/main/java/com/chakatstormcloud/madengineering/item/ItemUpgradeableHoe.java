@@ -10,7 +10,7 @@ public class ItemUpgradeableHoe extends ItemHoe{
 	public ItemUpgradeableHoe(ToolMaterial material,String unlocalizedName) {
 		super(material);
 		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(MadEngineering.MODID, unlocalizedName));
+		this.setRegistryName(MadEngineering.MODID, unlocalizedName);
 	}
 
 }

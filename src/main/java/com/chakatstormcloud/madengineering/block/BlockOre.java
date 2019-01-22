@@ -7,7 +7,6 @@ import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IMetaEnum;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.OreTypes;
 import com.chakatstormcloud.madengineering.block.itemblock.IMetaBlock;
 
-import nc.enumm.MetaEnums.OreType;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -23,6 +22,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class BlockOre extends Block implements IMetaBlock{
 	
@@ -33,6 +33,7 @@ public class BlockOre extends Block implements IMetaBlock{
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(MadEngineering.MODID, unlocalizedName));
 		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, OreTypes.COPPER));
+		
 	}
 	
 	

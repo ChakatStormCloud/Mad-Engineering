@@ -1,7 +1,7 @@
 {	
 	"textures":{
-		"particle": "madengineering:blocks/frame",
-		"frame": "madengineering:blocks/frame"
+		"particle": "madengineering:blocks/blockframe",
+		"frame": "madengineering:blocks/blockframe"
 	},
 	"elements":[
 		{

@@ -10,7 +10,7 @@ public class ItemUpgradeableAxe extends ItemAxe {
 	protected ItemUpgradeableAxe(ToolMaterial material,String unlocalizedName){
 		super(material);
 		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(MadEngineering.MODID, unlocalizedName));
+		this.setRegistryName(MadEngineering.MODID, unlocalizedName);
 		
 	}
 	

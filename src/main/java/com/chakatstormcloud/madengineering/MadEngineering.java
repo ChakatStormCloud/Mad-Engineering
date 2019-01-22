@@ -3,9 +3,7 @@ package com.chakatstormcloud.madengineering;
 import com.chakatstormcloud.madengineering.backend.CommonProxy;
 import com.chakatstormcloud.madengineering.backend.handlers.CreativeTabHandler;
 import com.chakatstormcloud.madengineering.backend.handlers.RecipeHandler;
-import com.chakatstormcloud.madengineering.block.BlocksHandler;
 import com.chakatstormcloud.madengineering.block.MadEngBlocks;
-import com.chakatstormcloud.madengineering.item.ItemsHandler;
 import com.chakatstormcloud.madengineering.item.MadEngItems;
 
 import net.minecraftforge.fml.common.Mod;
@@ -45,9 +43,6 @@ public class MadEngineering {
 		
 		MadEngItems.init();
 		MadEngBlocks.init();
-		CreativeTabHandler.init();
-		CreativeTabHandler.assignCreativeTabs();
-		
 	}
 	
 	@EventHandler
@@ -58,6 +53,9 @@ public class MadEngineering {
 		
 		RecipeHandler.registerCraftingRecipies();
 		RecipeHandler.registerSmeltingRecipies();
+		
+		CreativeTabHandler.init();
+		CreativeTabHandler.assignCreativeTabs();
 		
 	}
 	

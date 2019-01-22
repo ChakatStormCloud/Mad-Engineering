@@ -1,6 +1,6 @@
 package com.chakatstormcloud.madengineering.creativetabs;
 
-import com.chakatstormcloud.madengineering.item.ItemsHandler;
+import com.chakatstormcloud.madengineering.MadEngineering;
 import com.chakatstormcloud.madengineering.item.MadEngItems;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,12 +11,14 @@ public class TabMadEngineering extends CreativeTabs {
 	
 	
 	public TabMadEngineering() {
-		super("madenginering");
+		super(MadEngineering.MODID);
 	}
 	
+	
 	@Override
-	public ItemStack getTabIconItem(){
+	public ItemStack getTabIconItem() {
 		return new ItemStack(MadEngItems.itemNoteBook);
 	}
+	
 
 }

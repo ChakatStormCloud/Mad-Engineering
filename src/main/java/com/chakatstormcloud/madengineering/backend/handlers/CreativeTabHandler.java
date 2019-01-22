@@ -1,9 +1,7 @@
 package com.chakatstormcloud.madengineering.backend.handlers;
 
-import com.chakatstormcloud.madengineering.block.BlocksHandler;
 import com.chakatstormcloud.madengineering.block.MadEngBlocks;
 import com.chakatstormcloud.madengineering.creativetabs.TabMadEngineering;
-import com.chakatstormcloud.madengineering.item.ItemsHandler;
 import com.chakatstormcloud.madengineering.item.MadEngItems;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,6 +26,7 @@ public class CreativeTabHandler {
 		
 		MadEngBlocks.blockEngineerDesk.setCreativeTab(tabMadEngineer);
 		MadEngBlocks.blockOre.setCreativeTab(tabMadEngineer);
+		MadEngBlocks.blockFrame.setCreativeTab(tabMadEngineer);
 	}
 	
 }

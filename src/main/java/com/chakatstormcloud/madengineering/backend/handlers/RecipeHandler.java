@@ -3,9 +3,7 @@ package com.chakatstormcloud.madengineering.backend.handlers;
 import com.chakatstormcloud.madengineering.Utility;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IngotTypes;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.OreTypes;
-import com.chakatstormcloud.madengineering.block.BlocksHandler;
 import com.chakatstormcloud.madengineering.block.MadEngBlocks;
-import com.chakatstormcloud.madengineering.item.ItemsHandler;
 import com.chakatstormcloud.madengineering.item.MadEngItems;
 
 import net.minecraft.init.Blocks;

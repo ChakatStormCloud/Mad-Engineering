@@ -10,7 +10,7 @@ public class ItemUpgradeableSword extends ItemSword {
 	public ItemUpgradeableSword(ToolMaterial material, String unlocalizedName) {
 		super(material);
 		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(MadEngineering.MODID, unlocalizedName));
+		this.setRegistryName(MadEngineering.MODID, unlocalizedName);
 	}
 
 }

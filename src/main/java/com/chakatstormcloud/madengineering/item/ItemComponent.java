@@ -15,7 +15,7 @@ public class ItemComponent extends Item implements IMetaItem {
 	
 	public ItemComponent(String unlocalizedName) {
 		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(MadEngineering.MODID,unlocalizedName));
+		this.setRegistryName(MadEngineering.MODID,unlocalizedName);
 		this.setHasSubtypes(true);
 	}
 	
