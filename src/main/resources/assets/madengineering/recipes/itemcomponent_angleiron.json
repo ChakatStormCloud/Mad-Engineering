@@ -3,18 +3,12 @@
     
     "pattern":
     [
-        "PPP",
-        "IPI",
-        "I I"
+        "I ",
+        "II"
     ],
     
     "key":
     {
-        "P":
-        {
-            "item": "minecraft:planks",
-            "data": 32767
-        },
         "I":
         {
             "item": "minecraft:iron_ingot"
@@ -23,8 +17,8 @@
     
     "result":
     {
-        "item": "madengineering:blockEngineerDesk",
-        "count": 1,
+        "item": "madengineering:itemcomponent",
+        "count": 8,
         "data": 0
     }
 }

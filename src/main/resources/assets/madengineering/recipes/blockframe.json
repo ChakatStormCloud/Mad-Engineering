@@ -12,14 +12,14 @@
     {
         "I":
         {
-            "item": "madengineering:itemComponent",
+            "item": "madengineering:itemcomponent",
             "data": 0
         }
     },
     
     "result":
     {
-        "item": "madengineering:blockFrame",
+        "item": "madengineering:blockframe",
         "count": 4,
         "data": 0
     }
