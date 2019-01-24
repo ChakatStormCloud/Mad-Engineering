@@ -19,6 +19,7 @@ public class MadEngItems {
 	public static Item itemNoteBook;
 	public static Item itemComponent;
 	public static Item itemIngot;
+	public static Item itemDust;
 	
 	public static ToolMaterial upgradeable = EnumHelper.addToolMaterial(MadEngineering.MODID + ".upgradeable", 2, 400, 4F, 3F, 9);
 	
@@ -39,6 +40,7 @@ public class MadEngItems {
 		Items.add(itemNoteBook = new ItemNoteBook("itemNoteBook"));
 		Items.add(itemComponent = new ItemComponent("itemComponent"));
 		Items.add(itemIngot = new ItemIngot("itemIngot"));
+		Items.add(itemDust = new ItemDust("itemDust"));
 		
 		Items.add(itemUpgradeablePickaxe = new ItemUpgradeablePickaxe(upgradeable,"itemUpgradeablePickaxe"));
 		//Items.add(itemUpgradeableAxe = new ItemUpgradeableAxe(upgradeable,"itemUpgradeableAxe"));

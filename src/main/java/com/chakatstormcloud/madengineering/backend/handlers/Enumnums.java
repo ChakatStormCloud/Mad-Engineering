@@ -113,4 +113,31 @@ public class Enumnums {
 			return name;
 		}
 	}
+	public static enum DustTypes implements IStringSerializable, IMetaEnum{
+		COPPER("copper",0),
+		NICKEL("nickel",1),
+		CHROME("chrome",2),
+		TUNGSTEN("tungsten",3),
+		MOLYBDENUM("molybdenum",4),
+		COBALT("cobalt",5),
+		VANADIUM("vanadium",6),
+		MANGANESE("manganese",7),
+		NEODYMIUM("neodymium",8);
+		
+		private String name;
+		private int ID;
+
+		private DustTypes(String s, int a) {
+			this.name = s;
+			this.ID = a;
+		}
+		
+		public int getMeta() {
+			return ID;
+		}
+
+		public String getName() {
+			return name;
+		}
+	}
 }
