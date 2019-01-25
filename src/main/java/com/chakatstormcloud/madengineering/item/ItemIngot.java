@@ -31,9 +31,9 @@ public class ItemIngot extends Item implements IMetaItem{
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
 		if(stack.getItemDamage() < IngotTypes.values().length){
-			return this.getUnlocalizedName() + "." + IngotTypes.values()[stack.getItemDamage()].getName();
+			return this.getUnlocalizedName() + "_" + IngotTypes.values()[stack.getItemDamage()].getName();
 		}else{
-			return this.getUnlocalizedName() + "." + IngotTypes.COPPER.getName();
+			return this.getUnlocalizedName() + "_" + IngotTypes.COPPER.getName();
 		}
 	}
 

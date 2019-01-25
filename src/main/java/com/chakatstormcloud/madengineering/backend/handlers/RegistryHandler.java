@@ -5,6 +5,7 @@ import com.chakatstormcloud.madengineering.Utility;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IMetaEnum;
 import com.chakatstormcloud.madengineering.block.MadEngBlocks;
 import com.chakatstormcloud.madengineering.block.tileentity.TileEngineerDesk;
+import com.chakatstormcloud.madengineering.fluid.MadEngFluids;
 import com.chakatstormcloud.madengineering.item.IMetaItem;
 import com.chakatstormcloud.madengineering.item.MadEngItems;
 
@@ -14,6 +15,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidRegistry.FluidRegisterEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -24,6 +28,7 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 public class RegistryHandler {
 	
 	
+	
 	@SubscribeEvent
 	public static void onItemRegister(RegistryEvent.Register<Item> event) {
 		Utility.getLogger().info("Registering Items - Mad Engineering...");
@@ -32,6 +37,10 @@ public class RegistryHandler {
 		for(Item item: MadEngItems.Items) {
 			registry.register(item);
 			Utility.getLogger().info("Registered item: " + item.getUnlocalizedName());
+		}
+		for(Fluid fluid: MadEngFluids.Fluids) {
+			FluidRegistry.registerFluid(fluid);
+			FluidRegistry.addBucketForFluid(fluid);
 		}
 		
 	}

@@ -6,8 +6,23 @@ item.itemUpgradeableHoe.name=Upgradeable Hoe
 item.itemUpgradeableAxe.name=Upgradeable Shovel
 item.itemUpgradeableSword.name=Upgradeable Sword
 
-tile.blockEngineerDesk.desk.name=Engineer's Desk
-tile.blockEngineerDesk.workspace.name=Engineer's WorkBench
+tile.blockEngineerDesk_desk.name=Engineer's Desk
+tile.blockEngineerDesk_workspace.name=Engineer's WorkBench
+
+item.itemIngot_copper.name=Copper Ingot
+item.itemIngot_nickel.name=Nickel Ingot
+item.itemIngot_chrome.name=Chrome Ingot
+item.itemIngot_tungsten.name=Tungsten Ingot
+item.itemIngot_molybdenum.name=Molybdenum Ingot
+item.itemIngot_cobalt.name=Cobalt Ingot
+
+item.itemDust_copper.name=Copper Dust
+item.itemDust_nickel.name=Nickel Dust
+item.itemDust_chrome.name=Chrome Dust
+item.itemDust_tungsten.name=Tungsten Dust
+item.itemDust_molybdenum.name=Molybdenum Dust
+item.itemDust_cobalt.name=Cobalt Dust
+
 
 tile.blockOre_copper.name=Copper Ore
 tile.blockOre_nickel.name=Nickel Ore

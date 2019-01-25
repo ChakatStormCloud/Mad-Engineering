@@ -28,9 +28,9 @@ public class ItemDust extends Item implements IMetaItem{
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
 		if(stack.getItemDamage() < DustTypes.values().length){
-			return this.getUnlocalizedName() + "." + DustTypes.values()[stack.getItemDamage()].getName();
+			return this.getUnlocalizedName() + "_" + DustTypes.values()[stack.getItemDamage()].getName();
 		}else{
-			return this.getUnlocalizedName() + "." + DustTypes.COPPER.getName();
+			return this.getUnlocalizedName() + "_" + DustTypes.COPPER.getName();
 		}
 	}
 	
