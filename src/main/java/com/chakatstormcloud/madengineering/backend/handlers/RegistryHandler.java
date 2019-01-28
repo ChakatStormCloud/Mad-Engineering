@@ -5,6 +5,7 @@ import com.chakatstormcloud.madengineering.Utility;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IMetaEnum;
 import com.chakatstormcloud.madengineering.block.MadEngBlocks;
 import com.chakatstormcloud.madengineering.block.tileentity.TileEngineerDesk;
+import com.chakatstormcloud.madengineering.block.tileentity.TileSyngasGenerator;
 import com.chakatstormcloud.madengineering.fluid.MadEngFluids;
 import com.chakatstormcloud.madengineering.item.IMetaItem;
 import com.chakatstormcloud.madengineering.item.MadEngItems;
@@ -56,6 +57,7 @@ public class RegistryHandler {
 		}
 		
 		GameRegistry.registerTileEntity(TileEngineerDesk.class, new ResourceLocation(MadEngineering.MODID,"tileEngineerDesk"));
+		GameRegistry.registerTileEntity(TileSyngasGenerator.class, new ResourceLocation(MadEngineering.MODID,"tileSyngasGenerator"));
 	}
 	
 	

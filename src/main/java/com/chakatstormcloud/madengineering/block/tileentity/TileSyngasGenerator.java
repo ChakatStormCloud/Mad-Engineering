@@ -1,6 +1,10 @@
 package com.chakatstormcloud.madengineering.block.tileentity;
 
+import javax.swing.plaf.basic.BasicComboBoxUI.ItemHandler;
+
 import com.chakatstormcloud.madengineering.fluid.MadEngFluids;
+import com.chakatstormcloud.madengineering.utility.IInformable;
+import com.chakatstormcloud.madengineering.utility.ItemStackHandlerInformer;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -13,32 +17,41 @@ import net.minecraft.util.ITickable;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.oredict.OreDictionary;
+import scala.collection.parallel.BucketCombiner;
 
-public class TileSyngasGenerator extends TileEntity implements ICapabilitySerializable<NBTTagCompound>, ITickable{
+public class TileSyngasGenerator extends TileEntity implements ICapabilitySerializable<NBTTagCompound>, ITickable, IInformable{
 	
-	private IItemHandler itemHandler;
-	private IFluidHandler fluidHandler;
+	private ItemStackHandlerInformer itemHandler;
+	private FluidTank fluidHandler;
 	
-	private ItemStack feed;
-	private float heat;
-	private float burntime;
-	private float fuelsize;
-	private FluidStack syn;
+	private int heat;
+	private int burntime;
+	private int fuelsize;
 	
 	private boolean isProcessing;
 	private boolean hasFuel;
 	
 	public TileSyngasGenerator() {
-		feed = ItemStack.EMPTY;
-		heat = 0f;
-		burntime = 0f;
-		fuelsize = 1f;
-		syn = new FluidStack(MadEngFluids.fluidSynGas, 0);
+		heat = 0;
+		burntime = 0;
+		fuelsize = 1;
+		itemHandler = new ItemStackHandlerInformer(1, this) {
+			@Override
+			public boolean isItemValid(int slot, ItemStack stack) {
+				return (super.isItemValid(slot, stack) && (slot==1?TileSyngasGenerator.getBurntime(stack)>0:true) );
+			}
+		};
+		fluidHandler = new FluidTank(MadEngFluids.fluidSynGas, 0,4000);
+		fluidHandler.setCanFill(false);
+		
+		
 	}
 	
 	
@@ -71,66 +84,109 @@ public class TileSyngasGenerator extends TileEntity implements ICapabilitySerial
 	public void update() {
 		if(isProcessing) {
 			if(burntime > heat) {
-				syn.amount += heat;
+				fluidHandler.fillInternal(new FluidStack(MadEngFluids.fluidSynGas,heat), true);
 				burntime -= heat;
 			}else {
-				syn.amount += burntime;
+				fluidHandler.fillInternal(new FluidStack(MadEngFluids.fluidSynGas,burntime), true);
 				burntime = 0;
-				if (!useFuel()) {
+				if (!hasFuel||!useFuel()) {
 					isProcessing=false;
 				}
 			}
-			if(heat < 10) {
-				heat = (heat+0.5 > 10 ? 10f :heat+0.5f);
+			if(heat < 20) {
+				heat++;
 			}
+
+			this.markDirty();
 		}else {
-			if (heat >0) {
-				heat = (heat-0.3f < 0 ? 0f :heat-0.3f);
-			}
 			if (hasFuel && useFuel()) {
 				isProcessing=true;
+
+				this.markDirty();
+			}else if (heat >0) {
+				heat--;
+
+				this.markDirty();
 			}
 		}
-		
 	}
 	
 	private boolean useFuel() {
-		if((!feed.isEmpty()) && getBurntime()) {
-			if(feed.getCount() <= 1)
-				feed = ItemStack.EMPTY;
-			else
-				feed.setCount(feed.getCount()-1);
-			
-			return true;
+		if(!itemHandler.getStackInSlot(0).isEmpty()) {
+			ItemStack burn = itemHandler.extractItem(0, 1, false);
+			if (!burn.isEmpty()) {
+				burntime = fuelsize = getBurntime(burn);
+				isProcessing = true;
+				if (itemHandler.getStackInSlot(0).isEmpty()) {
+					hasFuel = false;
+				}
+
+				return true;
+			}
 		}
 		return false;
 	}
 	
-	private boolean getBurntime() {
+	private static int getBurntime(ItemStack stack) {
 		
-		if (feed.getCount() <= 0) {feed=ItemStack.EMPTY;return false;}
-		
-		int[] oreDic = OreDictionary.getOreIDs(feed);
+		int[] oreDic = OreDictionary.getOreIDs(stack);
 		
 		for (int i: oreDic) {
 			String name = OreDictionary.getOreName(i);
 			switch(name) {
 			case "plankWood":
-				burntime = fuelsize = 250;
-				return true;
+				return 250;
 			case "logWood":
-				
-				burntime = fuelsize = 1000;
-				return true;
+				return 1000;
 			case "stickWood":
-				
-				burntime = fuelsize = 125;
-				return true;
+				return 125;
 			}
 		}
-		return false;
+		return 0;
+	}
+
+
+	@Override
+	public void inform(Object source) {
+		if(source == this.itemHandler) {
+			if(!itemHandler.getStackInSlot(0).isEmpty()) {
+				hasFuel=true;
+				if(!isProcessing) {
+					useFuel();
+				}
+			}
+			this.markDirty();
+		}
+		
+		
 	}
 	
+	//================NBT==================//
 	
+	@Override
+	public NBTTagCompound serializeNBT() {
+		NBTTagCompound tag = super.serializeNBT();
+		tag.setTag("Feed",itemHandler.serializeNBT());
+		tag = fluidHandler.writeToNBT(tag);
+		tag.setBoolean("isProcessing", isProcessing);
+		tag.setInteger("Heat", heat);
+		tag.setInteger("Burntime", burntime);
+		tag.setInteger("Fuelsize", fuelsize);
+		
+		return tag;
+	}
 	
+	@Override
+	public void deserializeNBT(NBTTagCompound nbt) {
+		super.deserializeNBT(nbt);
+		itemHandler.deserializeNBT(nbt.getCompoundTag("Feed"));
+		if(getBurntime(itemHandler.getStackInSlot(0))>0) {
+			hasFuel = true;
+		}
+		fluidHandler.readFromNBT(nbt);
+		isProcessing = nbt.getBoolean("isProcessing");
+		heat = nbt.getInteger("Heat");
+		burntime = nbt.getInteger("Burntime");
+		fuelsize = nbt.getInteger("Fuelsize");
+	}
 }
