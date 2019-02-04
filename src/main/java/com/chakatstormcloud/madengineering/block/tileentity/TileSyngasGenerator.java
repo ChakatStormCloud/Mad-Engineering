@@ -1,14 +1,9 @@
 package com.chakatstormcloud.madengineering.block.tileentity;
 
-import javax.swing.plaf.basic.BasicComboBoxUI.ItemHandler;
-
 import com.chakatstormcloud.madengineering.fluid.MadEngFluids;
 import com.chakatstormcloud.madengineering.utility.IInformable;
 import com.chakatstormcloud.madengineering.utility.ItemStackHandlerInformer;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -19,12 +14,8 @@ import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
-import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.oredict.OreDictionary;
-import scala.collection.parallel.BucketCombiner;
 
 public class TileSyngasGenerator extends TileEntity implements ICapabilitySerializable<NBTTagCompound>, ITickable, IInformable{
 	
@@ -50,7 +41,7 @@ public class TileSyngasGenerator extends TileEntity implements ICapabilitySerial
 		};
 		fluidHandler = new FluidTank(MadEngFluids.fluidSynGas, 0,4000);
 		fluidHandler.setCanFill(false);
-		
+		//fluidHandler.setTileEntity(this); //used to fire fluidfillevents, probably not needed here.
 		
 	}
 	

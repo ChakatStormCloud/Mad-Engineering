@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 public class GuiHandler implements IGuiHandler{
 	
 	public static final int ENGINEERDESK_WORKSPACE = 0;
+	public static final int SYNGAS_GENERATOR = 1;
 
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if (ID == ENGINEERDESK_WORKSPACE){

@@ -18,12 +18,15 @@ public class MadEngBlocks {
 	public static Block blockOre;
 	public static Block blockFrame;
 	
+	public static Block blockSyngasGenerator;
+	
 
 	public static void init() {
 		
 		Blocks.add(blockEngineerDesk = new BlockEngineerDesk("blockEngineerDesk"));
 		Blocks.add(blockOre = new BlockOre("blockOre"));
 		Blocks.add(blockFrame = new BlockFrame("blockFrame"));
+		Blocks.add(blockSyngasGenerator = new BlockSyngasGenerator("blockSyngasGenerator"));
 		
 		for(Block block:Blocks) {
 			if (block instanceof IMetaBlock) {

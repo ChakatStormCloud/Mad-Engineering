@@ -27,6 +27,7 @@ public class CreativeTabHandler {
 		MadEngBlocks.blockEngineerDesk.setCreativeTab(tabMadEngineer);
 		MadEngBlocks.blockOre.setCreativeTab(tabMadEngineer);
 		MadEngBlocks.blockFrame.setCreativeTab(tabMadEngineer);
+		MadEngBlocks.blockSyngasGenerator.setCreativeTab(tabMadEngineer);
 	}
 	
 }

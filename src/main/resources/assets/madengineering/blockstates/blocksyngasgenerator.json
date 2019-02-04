@@ -1,0 +1,32 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "madengineering:blocks/blocksyngasgenerator"
+  },
+  "variants": {
+    "hasfuel": {
+      "true": {
+        "textures": {
+          "fuel": "blocks/planks_oak"
+        }
+      },
+      "false": {
+        
+      }
+    },
+    "facing": {
+      "north": {
+        "y":0
+      },
+      "east": {
+        "y":90
+      },
+      "south": {
+        "y":180
+      },
+      "west":{
+        "y":270
+      }
+    }
+  }
+}
