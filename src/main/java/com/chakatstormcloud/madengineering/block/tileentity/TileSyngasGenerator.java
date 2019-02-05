@@ -1,9 +1,12 @@
 package com.chakatstormcloud.madengineering.block.tileentity;
 
 import com.chakatstormcloud.madengineering.fluid.MadEngFluids;
+import com.chakatstormcloud.madengineering.utility.IBreakableInventory;
 import com.chakatstormcloud.madengineering.utility.IInformable;
-import com.chakatstormcloud.madengineering.utility.ItemStackHandlerInformer;
+import com.chakatstormcloud.madengineering.utility.ItemStackHandlerDumpableInformer;
 
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -17,9 +20,9 @@ import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class TileSyngasGenerator extends TileEntity implements ICapabilitySerializable<NBTTagCompound>, ITickable, IInformable{
+public class TileSyngasGenerator extends TileEntity implements ICapabilitySerializable<NBTTagCompound>, ITickable, IInformable, IBreakableInventory{
 	
-	private ItemStackHandlerInformer itemHandler;
+	private ItemStackHandlerDumpableInformer itemHandler;
 	private FluidTank fluidHandler;
 	
 	private int heat;
@@ -33,7 +36,7 @@ public class TileSyngasGenerator extends TileEntity implements ICapabilitySerial
 		heat = 0;
 		burntime = 0;
 		fuelsize = 1;
-		itemHandler = new ItemStackHandlerInformer(1, this) {
+		itemHandler = new ItemStackHandlerDumpableInformer(1, this) {
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
 				return (super.isItemValid(slot, stack) && (slot==1?TileSyngasGenerator.getBurntime(stack)>0:true) );
@@ -74,17 +77,19 @@ public class TileSyngasGenerator extends TileEntity implements ICapabilitySerial
 	@Override
 	public void update() {
 		if(isProcessing) {
-			if(burntime > heat) {
-				fluidHandler.fillInternal(new FluidStack(MadEngFluids.fluidSynGas,heat), true);
-				burntime -= heat;
-			}else {
-				fluidHandler.fillInternal(new FluidStack(MadEngFluids.fluidSynGas,burntime), true);
-				burntime = 0;
-				if (!hasFuel||!useFuel()) {
-					isProcessing=false;
+			if(heat>1000) {	
+				if(burntime > (heat-1000)/100) {
+					fluidHandler.fillInternal(new FluidStack(MadEngFluids.fluidSynGas,(heat-1000)/100), true);
+					burntime -= (heat-1000)/100;
+				}else {
+					fluidHandler.fillInternal(new FluidStack(MadEngFluids.fluidSynGas,burntime), true);
+					burntime = 0;
+					if (!hasFuel||!useFuel()) {
+						isProcessing=false;
+					}
 				}
 			}
-			if(heat < 20) {
+			if(heat < 2000) {
 				heat++;
 			}
 
@@ -100,6 +105,7 @@ public class TileSyngasGenerator extends TileEntity implements ICapabilitySerial
 				this.markDirty();
 			}
 		}
+		
 	}
 	
 	private boolean useFuel() {
@@ -149,7 +155,6 @@ public class TileSyngasGenerator extends TileEntity implements ICapabilitySerial
 			this.markDirty();
 		}
 		
-		
 	}
 	
 	//================NBT==================//
@@ -180,4 +185,11 @@ public class TileSyngasGenerator extends TileEntity implements ICapabilitySerial
 		burntime = nbt.getInteger("Burntime");
 		fuelsize = nbt.getInteger("Fuelsize");
 	}
+
+
+	@Override
+	public ItemStack[] getStacksToDrop() {
+		return itemHandler.dump();
+	}
+
 }

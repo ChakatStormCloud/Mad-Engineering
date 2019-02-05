@@ -42,10 +42,9 @@ public class Enumnums {
 	
 	
 	public static enum ComponentTypes implements IStringSerializable, IMetaEnum{
-		IRON_SHEET("angle_iron",0),
-		IRON_GEAR("iron_gear",1), //these are just placeholder for now.
-		IRON_WIRE("iron_wire",2),
-		BROKEN("broken",3);
+		ANGLE_IRON("angle_iron",0),
+		COPPER_TUBE("copper_tube",1),
+		PISTON("piston",2);
 		
 		private int ID;
 		private String name;
@@ -95,7 +94,7 @@ public class Enumnums {
 		CHROME("chrome",2),
 		TUNGSTEN("tungsten",3),
 		MOLYBDENUM("molybdenum",4),
-		COBALT("colbalt",5);
+		COBALT("cobalt",5);
 		
 		private String name;
 		private int ID;

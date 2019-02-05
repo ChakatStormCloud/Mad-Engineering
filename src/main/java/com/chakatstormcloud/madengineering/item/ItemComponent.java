@@ -32,7 +32,7 @@ public class ItemComponent extends Item implements IMetaItem {
 		if(stack.getItemDamage() < ComponentTypes.values().length){
 			return this.getUnlocalizedName() + "." + ComponentTypes.values()[stack.getItemDamage()].getName();
 		}else{
-			return this.getUnlocalizedName() + "." + ComponentTypes.BROKEN.getName();
+			return this.getUnlocalizedName() + "." + ComponentTypes.ANGLE_IRON.getName();
 		}
 	}
 

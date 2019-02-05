@@ -72,6 +72,7 @@ public class BlockEngineerDesk extends Block implements IMetaBlock, ITileEntityP
 	public int damageDropped(IBlockState state) {
 		return getMetaFromState(state);
 	}
+	
 	//============Tile Entity=============//
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileEngineerDesk();

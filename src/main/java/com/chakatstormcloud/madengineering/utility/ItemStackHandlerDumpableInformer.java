@@ -1,25 +1,23 @@
 package com.chakatstormcloud.madengineering.utility;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.NonNullList;
-import net.minecraftforge.items.ItemStackHandler;
 
-public class ItemStackHandlerInformer extends ItemStackHandler {
-	
+public class ItemStackHandlerDumpableInformer extends ItemStackHandlerDumpable {
+
 	private IInformable te;
 
-	public ItemStackHandlerInformer(IInformable te) {
+	public ItemStackHandlerDumpableInformer(IInformable te) {
 		this(1,te);
 	}
 
-	public ItemStackHandlerInformer(int size,IInformable te) {
+	public ItemStackHandlerDumpableInformer(int size,IInformable te) {
 		super(size);
 		this.te =te;
 		
 	}
 
-	public ItemStackHandlerInformer(NonNullList<ItemStack> stacks,IInformable te) {
+	public ItemStackHandlerDumpableInformer(NonNullList<ItemStack> stacks,IInformable te) {
 		super(stacks);
 		this.te =te;
 	}
@@ -29,4 +27,5 @@ public class ItemStackHandlerInformer extends ItemStackHandler {
 		super.onContentsChanged(slot);
 		te.inform(this);
 	}
+	
 }
