@@ -6,6 +6,8 @@ item.itemUpgradeableHoe.name=Upgradeable Hoe
 item.itemUpgradeableAxe.name=Upgradeable Shovel
 item.itemUpgradeableSword.name=Upgradeable Sword
 
+item.itemCryoPick.name=CryoPick
+
 tile.blockEngineerDesk_desk.name=Engineer's Desk
 tile.blockEngineerDesk_workspace.name=Engineer's WorkBench
 
@@ -23,6 +25,9 @@ item.itemDust_tungsten.name=Tungsten Dust
 item.itemDust_molybdenum.name=Molybdenum Dust
 item.itemDust_cobalt.name=Cobalt Dust
 
+item.itemComponent_angle_iron.name=Angle Iron
+item.itemComponent_copper_tube.name=Copper Tube
+item.itemComponent_piston.name=Piston
 
 tile.blockOre_copper.name=Copper Ore
 tile.blockOre_nickel.name=Nickel Ore
@@ -30,5 +35,7 @@ tile.blockOre_chrome.name=Chromium Ore
 tile.blockOre_tungsten.name=Tungsten Ore
 
 tile.blockFrame.name=Frame
+
+tile.blockSyngasGenerator.name=Wood Gasifier
 
 itemGroup.madengineering=Mad Engineering

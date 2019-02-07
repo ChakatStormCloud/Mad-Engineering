@@ -1,12 +1,12 @@
 package com.chakatstormcloud.madengineering.block.tileentity;
 
+import java.util.List;
+
 import com.chakatstormcloud.madengineering.fluid.MadEngFluids;
 import com.chakatstormcloud.madengineering.utility.IBreakableInventory;
 import com.chakatstormcloud.madengineering.utility.IInformable;
 import com.chakatstormcloud.madengineering.utility.ItemStackHandlerDumpableInformer;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -188,7 +188,7 @@ public class TileSyngasGenerator extends TileEntity implements ICapabilitySerial
 
 
 	@Override
-	public ItemStack[] getStacksToDrop() {
+	public List<ItemStack> getStacksToDrop() {
 		return itemHandler.dump();
 	}
 

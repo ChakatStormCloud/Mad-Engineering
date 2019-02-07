@@ -3,6 +3,7 @@ package com.chakatstormcloud.madengineering.item;
 import java.util.List;
 
 import com.chakatstormcloud.madengineering.MadEngineering;
+import com.chakatstormcloud.madengineering.backend.handlers.CreativeTabHandler;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IMetaEnum;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IngotTypes;
 
@@ -23,6 +24,7 @@ public class ItemIngot extends Item implements IMetaItem{
 	
 	@Override
 	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> subItems) {
+		if (tab!=null&&tab!=CreativeTabHandler.tabMadEngineer) return;
 		for(int i = 0; i < IngotTypes.values().length;i++){
 			subItems.add(new  ItemStack(this,1,i));
 		}

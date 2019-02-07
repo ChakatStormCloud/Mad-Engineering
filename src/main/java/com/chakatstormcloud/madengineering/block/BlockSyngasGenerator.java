@@ -1,37 +1,22 @@
 package com.chakatstormcloud.madengineering.block;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Set;
-
-import com.chakatstormcloud.madengineering.MadEngineering;
-import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.OreTypes;
 import com.chakatstormcloud.madengineering.block.tileentity.TileSyngasGenerator;
-import com.chakatstormcloud.madengineering.gui.GuiHandler;
 
-import net.minecraft.block.BlockFurnace;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.InventoryHelper;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
+import net.minecraftforge.fluids.capability.IFluidHandler;
 
 public class BlockSyngasGenerator extends BlockMachine {
 	
@@ -120,7 +105,12 @@ public class BlockSyngasGenerator extends BlockMachine {
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		
+		if (playerIn==null||playerIn.isSneaking()) return false;
+//		IFluidHandler ifh = playerIn.getHeldItemMainhand().getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null);
+//		if(ifh!=null) {
+//			ifh.fill(resource, doFill)
+//			return true;
+//		}
 		if(worldIn.isRemote){
 			return true;
 		}else{
@@ -128,6 +118,7 @@ public class BlockSyngasGenerator extends BlockMachine {
 			return true;
 			
 		}
+		
 		
 		//return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
 	}

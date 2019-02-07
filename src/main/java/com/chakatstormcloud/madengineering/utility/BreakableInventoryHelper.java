@@ -1,5 +1,6 @@
 package com.chakatstormcloud.madengineering.utility;
 
+import java.util.List;
 import java.util.Random;
 
 import net.minecraft.entity.Entity;
@@ -22,7 +23,7 @@ public class BreakableInventoryHelper{
 
 	private static void dropInventoryItems(World worldIn, double x, double y, double z, IBreakableInventory inventory)
 	{	
-		ItemStack[] stacks = inventory.getStacksToDrop();
+		List<ItemStack> stacks = inventory.getStacksToDrop();
 		
 		for(ItemStack itemstack:stacks){
 			

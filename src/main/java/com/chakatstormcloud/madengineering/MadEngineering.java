@@ -6,6 +6,7 @@ import com.chakatstormcloud.madengineering.backend.handlers.RecipeHandler;
 import com.chakatstormcloud.madengineering.block.MadEngBlocks;
 import com.chakatstormcloud.madengineering.fluid.MadEngFluids;
 import com.chakatstormcloud.madengineering.item.MadEngItems;
+import com.chakatstormcloud.madengineering.item.MadToolMaterial;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -40,7 +41,7 @@ public class MadEngineering {
 	public void preInit(FMLPreInitializationEvent event){
 		Utility.getLogger().info("PreInit - Mad Engineering...");
 		
-		
+		MadToolMaterial.initToolMaterials();
 		MadEngItems.init();
 		MadEngBlocks.init();
 		MadEngFluids.init();

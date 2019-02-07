@@ -21,7 +21,10 @@ public class CreativeTabHandler {
 		MadEngItems.itemUpgradeableHoe.setCreativeTab(tabMadEngineer);
 		MadEngItems.itemUpgradeableShovel.setCreativeTab(tabMadEngineer);
 		MadEngItems.itemUpgradeableSword.setCreativeTab(tabMadEngineer);
+		MadEngItems.itemCryoPick.setCreativeTab(tabMadEngineer);
+		
 		MadEngItems.itemComponent.setCreativeTab(tabMadEngineer);
+		MadEngItems.itemDust.setCreativeTab(tabMadEngineer);
 		MadEngItems.itemIngot.setCreativeTab(tabMadEngineer);
 		
 		MadEngBlocks.blockEngineerDesk.setCreativeTab(tabMadEngineer);

@@ -3,6 +3,7 @@ package com.chakatstormcloud.madengineering.block;
 import java.util.List;
 
 import com.chakatstormcloud.madengineering.MadEngineering;
+import com.chakatstormcloud.madengineering.backend.handlers.CreativeTabHandler;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.IMetaEnum;
 import com.chakatstormcloud.madengineering.backend.handlers.Enumnums.OreTypes;
 import com.chakatstormcloud.madengineering.block.itemblock.IMetaBlock;
@@ -69,6 +70,7 @@ public class BlockOre extends Block implements IMetaBlock{
 	
 	@Override
 	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
+		if (tab!=null&&tab!=CreativeTabHandler.tabMadEngineer) return;
 		for(int i = 0; i < OreTypes.values().length; i++){
 			list.add(new ItemStack(this, 1, i));
 		}

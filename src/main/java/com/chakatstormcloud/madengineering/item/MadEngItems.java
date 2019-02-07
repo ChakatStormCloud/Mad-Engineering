@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.chakatstormcloud.madengineering.MadEngineering;
+import com.chakatstormcloud.madengineering.item.MadToolMaterial;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
@@ -14,6 +15,7 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
+
 public class MadEngItems {
 	
 	public static Item itemNoteBook;
@@ -21,13 +23,13 @@ public class MadEngItems {
 	public static Item itemIngot;
 	public static Item itemDust;
 	
-	public static ToolMaterial upgradeable = EnumHelper.addToolMaterial(MadEngineering.MODID + ".upgradeable", 2, 400, 4F, 3F, 9);
-	
 	public static ItemPickaxe itemUpgradeablePickaxe;
 	public static ItemAxe itemUpgradeableAxe;
 	public static ItemHoe itemUpgradeableHoe;
 	public static ItemSpade itemUpgradeableShovel;
 	public static ItemSword itemUpgradeableSword;
+	
+	public static ItemPickaxe itemCryoPick; 
 	
 	
 	public static final List<Item> Items = new ArrayList<Item>();
@@ -42,13 +44,13 @@ public class MadEngItems {
 		Items.add(itemIngot = new ItemIngot("itemIngot"));
 		Items.add(itemDust = new ItemDust("itemDust"));
 		
-		Items.add(itemUpgradeablePickaxe = new ItemUpgradeablePickaxe(upgradeable,"itemUpgradeablePickaxe"));
-		//Items.add(itemUpgradeableAxe = new ItemUpgradeableAxe(upgradeable,"itemUpgradeableAxe"));
-		Items.add(itemUpgradeableHoe = new ItemUpgradeableHoe(upgradeable,"itemUpgradeableHoe"));
-		Items.add(itemUpgradeableShovel = new ItemUpgradeableShovel(upgradeable,"itemUpgradeableShovel"));
-		Items.add(itemUpgradeableSword = new ItemUpgradeableSword(upgradeable,"itemUpgradeableSword"));
+		Items.add(itemUpgradeablePickaxe = new ItemUpgradeablePickaxe(MadToolMaterial.upgradeable,"itemUpgradeablePickaxe"));
+		//Items.add(itemUpgradeableAxe = new ItemUpgradeableAxe(MadToolMaterial.upgradeable,"itemUpgradeableAxe"));
+		Items.add(itemUpgradeableHoe = new ItemUpgradeableHoe(MadToolMaterial.upgradeable,"itemUpgradeableHoe"));
+		Items.add(itemUpgradeableShovel = new ItemUpgradeableShovel(MadToolMaterial.upgradeable,"itemUpgradeableShovel"));
+		Items.add(itemUpgradeableSword = new ItemUpgradeableSword(MadToolMaterial.upgradeable,"itemUpgradeableSword"));
 		
-		
+		Items.add(itemCryoPick = new ItemCryoPick(MadToolMaterial.cryopick,"itemCryoPick"));
 	}
 	
 	
