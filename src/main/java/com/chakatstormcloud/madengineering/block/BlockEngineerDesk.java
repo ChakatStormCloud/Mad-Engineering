@@ -71,6 +71,7 @@ public class BlockEngineerDesk extends Block implements IMetaBlock, ITileEntityP
 	}
 	
 	//============Tile Entity=============//
+	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileEngineerDesk();
 	}
@@ -114,6 +115,7 @@ public class BlockEngineerDesk extends Block implements IMetaBlock, ITileEntityP
 	
 	//=============Interface IMetaBlockName=============//
 	
+	@Override
 	public String getMetaName(ItemStack stack) {
 		return EngineerDeskTypes.values()[stack.getItemDamage()].getName();
 	}

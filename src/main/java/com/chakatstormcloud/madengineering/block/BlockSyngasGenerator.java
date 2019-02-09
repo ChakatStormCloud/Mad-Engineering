@@ -18,16 +18,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 
-public class BlockSyngasGenerator extends BlockMachine {
+public class BlockSyngasGenerator extends BlockMachineFacing {
 	
 	public static final PropertyBool HASFUEL = PropertyBool.create("hasfuel");
-	
-	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	
 	public BlockSyngasGenerator(String name) {
 		super(name);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(HASFUEL, false).withProperty(FACING, EnumFacing.NORTH));
-		
 		
 	}
 	//================BlockStates================//
@@ -39,44 +36,18 @@ public class BlockSyngasGenerator extends BlockMachine {
 	
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		int i=0;
+		int i= super.getMetaFromState(state);
 		
-		if((Boolean)state.getValue(HASFUEL))i=4;
-		
-		switch(state.getValue(FACING)){
-		case EAST:
-			i+=1;
-			break;
-		case SOUTH:
-			i+=2;
-			break;
-		case WEST:
-			i+=3;
-			break;
-		default:
-			break;
-		}
+		if((Boolean)state.getValue(HASFUEL))i+=4;
 		
 		return i;
 	}
 	
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		IBlockState state = this.getDefaultState();
+		IBlockState state = super.getStateFromMeta(meta);
 		
 		if (meta>3)state = state.withProperty(HASFUEL, true);
-		
-		switch(meta%4) {
-		case 1:
-			state = state.withProperty(FACING, EnumFacing.EAST);
-			break;
-		case 2:
-			state = state.withProperty(FACING, EnumFacing.SOUTH);
-			break;
-		case 3:
-			state = state.withProperty(FACING, EnumFacing.WEST);
-		default:
-		}
 		
 		return state;
 	}
@@ -85,7 +56,7 @@ public class BlockSyngasGenerator extends BlockMachine {
 	@Override
 	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
 	{
-		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+		return super.getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer);
 	}
 	
 	//================Tile Entity================//
@@ -98,7 +69,6 @@ public class BlockSyngasGenerator extends BlockMachine {
 	@Override
 	public TileEntity createTileEntity(World world, IBlockState state) {
 		return new TileSyngasGenerator();
-		
 	}
 	
 	

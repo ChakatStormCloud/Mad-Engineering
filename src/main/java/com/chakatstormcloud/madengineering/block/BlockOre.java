@@ -79,15 +79,17 @@ public class BlockOre extends Block implements IMetaBlock{
 	
 	//=============Interface IMetaBlock=============//
 	
+	@Override
 	public String getMetaName(ItemStack stack) {
 		return OreTypes.values()[stack.getItemDamage()].getName();
 	}
-
-
+	
+	
+	@Override
 	public Class<? extends Enum> getMetaEnum() {
 		return OreTypes.class;
 	}
-
+	
 	
 	
 	

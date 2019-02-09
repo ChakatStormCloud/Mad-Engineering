@@ -11,15 +11,18 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
@@ -38,6 +41,12 @@ public class ItemCryoPick extends ItemPickaxe{
 			return this.efficiency * 5;
 		}
 		return super.getDestroySpeed(stack, state);
+	}
+	
+	@Override
+	public boolean onEntitySwing(EntityLivingBase entityLiving, ItemStack stack) {
+		// TODO Auto-generated method stub
+		return super.onEntitySwing(entityLiving, stack);
 	}
 	
 	@Override
@@ -60,6 +69,7 @@ public class ItemCryoPick extends ItemPickaxe{
 						}else {
 							w.setBlockState(tpos, Blocks.COBBLESTONE.getDefaultState(), 3);
 						}
+						
 					}else if(blo.getMaterial() == Material.WATER) {
 						if(lv==0) {
 							w.setBlockState(tpos, Blocks.PACKED_ICE.getDefaultState(), 3);
@@ -76,13 +86,20 @@ public class ItemCryoPick extends ItemPickaxe{
 			if (!w.isRemote) {
 				itemstack.attemptDamageItem(1, player.getRNG(), (EntityPlayerMP) player);
 			}else{
-				//TODO play hissing sound
-			} 
+				w.playSound(player, pos, SoundEvents.BLOCK_LAVA_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (w.rand.nextFloat() - w.rand.nextFloat()) * 0.8F);
+			}
 		}
 		
 		
 		return super.onBlockStartBreak(itemstack, pos, player);
 	}
+	
+	@Override
+	public boolean canHarvestBlock(IBlockState blockIn) {
+		// TODO Auto-generated method stub
+		return super.canHarvestBlock(blockIn);
+	}
+	
 	
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
