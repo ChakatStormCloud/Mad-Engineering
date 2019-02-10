@@ -1,0 +1,113 @@
+Concepts
+	Implants
+		items that are permenently affixed to the player
+		they don't use baubles, and the player can have at many as they want.
+		possibly add a render to the player for certain implants
+		Maybe have a percentage of cyberization to show how machine they've become, and some effects related to it
+	Experiments
+		actions to be preformed by the player to progress though the research tree
+		can be simple (throwing ender pearl)
+		to complex and resource intensive (making prototypes)
+		could result in accidental boss summoning ( =D )
+	Power teirs
+		Gasoline/combustion fuels
+			could be used for lower teir systems, which could then easilly be converted to electric using an electric motor.
+		Electric
+			required for higher teirs, and anything that has computer chips
+		
+Research
+	Feilds
+		Power
+			"Free"
+				Solar
+				Wind
+				Hydroelectric
+			Renew-able
+				Woodgas
+			Nuclear
+			Coal/oil
+			
+		Ender Manipulation
+			ender hand
+			Ender inventory/storage
+			teleporter???
+		Cyberization
+			Implants
+				musculo-skeletal (armour/health)
+				storage??? *mind blown*
+				tools
+		Mechs
+			Wear-able
+			Ride-able
+		
+		Automation
+			Farming
+			Crafting
+		
+	
+Items
+	Ender Hand
+		powered long/infinate range access to chest, and placing of blocks
+		long/infinate range block breaking, and attacking
+			possibly require some sort of booster, like liquid ender
+		maybe make it an implant instead?
+			possibly requiring a teir 2 battery implant of some kind
+	Drill/jackhammer
+		Basic, gasoline/electric variations, upgradable with steel or diamond tips
+	chainsaw
+		Basic, gasoline/electric variations, upgradable with steel chains
+	Ender inventory system
+		has an in slot and an out slot and can be used to order items, and return items.
+		would link through ender space to a small multiblock, that would connect to an existing storage system of any kind
+			(applied energistics, refined storage, ender io, one of this mods design)
+	Cryo-Pickaxe
+		Hitting a block will freeze blocks directly adjacent to it, lava > obsidian, water > Ice
+		Will mine relatively quickly, and obsidian VERY quickly. It's to mine obsidian without water
+	
+Implants
+	Steel claws
+		attack is always atleast iron sword strength (maybe a little less)
+	Nutrient Injector
+		Hunger bar is always full, and saturation slowly increases
+			effect: health will regenerate slowly at all times, when full,-
+			-saturation will build up and when hit health will regen quickly until saturation is depleted
+		requires a nutrient juice paste
+		Possibly create a dependency on the injector, if you don't eat for a long enough time you can't eat at all
+		Require battery?
+	Battery
+		required for certain implants, charged by dock, or tesla
+	flashlight eyes
+		require battery
+		air type light source follows player, togglable
+	
+	
+Blocks/machines
+	cable/pipe Frame
+		a simple framed block that can and will contain many different pipes and electrical cabling
+	Drawing table, work table, workspace
+		like the research table from thaumcraft, it's where you learn more recipes and ideas
+		You'd put your big book o notes into it and come up with experiments to help you learn more
+		after experiments you come back and unlock what comes after.
+	Wood Gas Generator
+		Makes power running directly off of wood planks or logs will take a
+		Potentially upgradable to Methanol by running the syn gas through a refinement process
+	Gunpowder engine
+		Terrible first engine ment as a reseach step, will explode if set to over 60% power.
+	Steam Engine
+		boil water, get steam pretty basic, but may be used to upgrade syn gas to methanol.
+	Auto Farm
+		Big track mounted farm that rolls over the farm and harvests, waters, and replants everything.
+		No need for water blocks, doesn't take up any space inside the farm, just on the edges. and above it as it rolls over.
+		optional: fertiliser.
+	Ender Invetory System
+		Connection point for an enderspace inventory system, would interact with any kind of storage management system to serve
+		the player with the ability to place anything into their storage network, and order anything from it, from the palm of thier hand.
+		requires power, and significantly more for it's initial start up.
+	Ender Storage Connection
+		Essentially a tesseract, requires power on atleast 1 side, would require a significant amount more for boot up than to maintain it.
+	Surgical Table
+		Upgradable table for adding implants, some implants requiring more upgraded tables.
+	
+	
+
+

@@ -26,10 +26,12 @@ public class Enumnums {
 			this.name = name;
 		}
 		
+		@Override
 		public int getMeta(){
 			return ID;
 		}
 		
+		@Override
 		public String getName(){
 			return name;
 		}
@@ -53,11 +55,13 @@ public class Enumnums {
 			this.name = s;
 			this.ID = a;
 		}
-		
+
+		@Override
 		public String getName() {
 			return name;
 		}
-		
+
+		@Override
 		public int getMeta(){
 			return ID;
 		}
@@ -77,11 +81,12 @@ public class Enumnums {
 			this.ID = a;
 		}
 		
-		
+		@Override
 		public int getMeta() {
 			return ID;
 		}
-
+		
+		@Override
 		public String getName() {
 			return name;
 		}
@@ -98,16 +103,18 @@ public class Enumnums {
 		
 		private String name;
 		private int ID;
-
+		
 		private IngotTypes(String s, int a) {
 			this.name = s;
 			this.ID = a;
 		}
 		
+		@Override
 		public int getMeta() {
 			return ID;
 		}
-
+		
+		@Override
 		public String getName() {
 			return name;
 		}
@@ -125,16 +132,18 @@ public class Enumnums {
 		
 		private String name;
 		private int ID;
-
+		
 		private DustTypes(String s, int a) {
 			this.name = s;
 			this.ID = a;
 		}
 		
+		@Override
 		public int getMeta() {
 			return ID;
 		}
-
+		
+		@Override
 		public String getName() {
 			return name;
 		}

@@ -95,6 +95,13 @@ public class ItemCryoPick extends ItemPickaxe{
 	
 	
 	@Override
+	public boolean canHarvestBlock(IBlockState blockIn) {
+		// TODO Auto-generated method stub
+		return super.canHarvestBlock(blockIn);
+	}
+	
+	
+	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
 		boolean res = super.onLeftClickEntity(stack, player, entity);
 		if ((!res)&&entity instanceof EntityLiving) {
