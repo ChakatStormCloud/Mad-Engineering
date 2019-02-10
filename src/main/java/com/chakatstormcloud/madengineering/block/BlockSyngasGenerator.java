@@ -1,6 +1,8 @@
 package com.chakatstormcloud.madengineering.block;
 
+import com.chakatstormcloud.madengineering.MadEngineering;
 import com.chakatstormcloud.madengineering.block.tileentity.TileSyngasGenerator;
+import com.chakatstormcloud.madengineering.gui.GuiHandler;
 
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.properties.IProperty;
@@ -114,7 +116,7 @@ public class BlockSyngasGenerator extends BlockMachine {
 		if(worldIn.isRemote){
 			return true;
 		}else{
-			//playerIn.openGui(MadEngineering.instance, GuiHandler.
+			playerIn.openGui(MadEngineering.instance, GuiHandler.SYNGAS_GENERATOR, worldIn,pos.getX(),pos.getY(),pos.getZ());
 			return true;
 			
 		}

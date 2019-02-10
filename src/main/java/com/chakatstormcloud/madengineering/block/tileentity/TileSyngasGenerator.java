@@ -7,6 +7,7 @@ import com.chakatstormcloud.madengineering.utility.IBreakableInventory;
 import com.chakatstormcloud.madengineering.utility.IInformable;
 import com.chakatstormcloud.madengineering.utility.ItemStackHandlerDumpableInformer;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -190,6 +191,11 @@ public class TileSyngasGenerator extends TileEntity implements ICapabilitySerial
 	@Override
 	public List<ItemStack> getStacksToDrop() {
 		return itemHandler.dump();
+	}
+	
+	public boolean isUseableByPlayer(EntityPlayer playerIn) {
+		return this.world.getTileEntity(this.getPos()) == this
+				&& playerIn.getDistanceSq(this.pos.add(0.5, 0.5, 0.5)) <= 64;
 	}
 
 }
