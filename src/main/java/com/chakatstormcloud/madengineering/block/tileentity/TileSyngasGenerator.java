@@ -142,8 +142,8 @@ public class TileSyngasGenerator extends TileEntity implements ICapabilitySerial
 		}
 		return 0;
 	}
-
-
+	
+	
 	@Override
 	public void inform(Object source) {
 		if(source == this.itemHandler) {

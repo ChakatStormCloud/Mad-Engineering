@@ -55,12 +55,6 @@ public class BlockSyngasGenerator extends BlockMachineFacing {
 	}
 	
 	
-	@Override
-	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-	{
-		return super.getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer);
-	}
-	
 	//================Tile Entity================//
 	@Override
 	public boolean hasTileEntity(IBlockState state) {
