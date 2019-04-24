@@ -18,12 +18,8 @@ public class ContainerSyngasGenerator extends Container {
 	public ContainerSyngasGenerator(IInventory playerInv,TileSyngasGenerator te) {
 		IItemHandler handler = te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 		
-		this.addSlotToContainer(new SlotItemHandler(handler,0,80,44));
-		this.addSlotToContainer(new SlotItemHandler(handler,1,80,11));
-		this.addSlotToContainer(new SlotItemHandler(handler,2,113,36));
-		this.addSlotToContainer(new SlotItemHandler(handler,3,100,77));
-		this.addSlotToContainer(new SlotItemHandler(handler,4,59,77));
-		this.addSlotToContainer(new SlotItemHandler(handler,5,47,36));
+		this.addSlotToContainer(new SlotItemHandler(handler,0,36,29));
+		
 		
 		int xPos = 8; // xpos for begining of main inventory
 		int yPos = 113; // ypos for begining of main inventory
